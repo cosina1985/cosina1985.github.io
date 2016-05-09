@@ -53,7 +53,7 @@
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Søk"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -63,6 +63,93 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-objc_load_initialize" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/09/objc_load_initialize/" class="article-date">
+  <time datetime="2016-05-09T05:04:05.000Z" itemprop="datePublished">2016-05-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/09/objc_load_initialize/">NSObject load 和 initialize 的调用时间和次数</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">@interface Animal : NSObject  @end</span><br><span class="line"></span><br><span class="line">@interface Cat : Animal @end</span><br><span class="line"></span><br><span class="line">@interface Dog : Animal @end</span><br><span class="line"></span><br><span class="line">@implementation Animal</span><br><span class="line"></span><br><span class="line">+ (void)load &#123;</span><br><span class="line">    NSLog(@&quot;in Animal load %@&quot;,NSStringFromClass([self class]));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">+(void) initialize&#123;</span><br><span class="line">    NSLog(@&quot;in Animal initialize with %@&quot;,NSStringFromClass([self class]));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@end</span><br><span class="line"></span><br><span class="line">@implementation Cat</span><br><span class="line">@end</span><br><span class="line"></span><br><span class="line">@implementation Dog</span><br><span class="line">@end</span><br><span class="line"></span><br><span class="line">@implementation AppDelegate</span><br><span class="line"></span><br><span class="line">- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions &#123;</span><br><span class="line">    NSLog(@&quot;&gt;1&quot;);</span><br><span class="line">    Cat *cat0 = [[Cat alloc] init];</span><br><span class="line">    NSLog(@&quot;&gt;2&quot;);</span><br><span class="line">    Dog *dog0 = [[Dog alloc] init];</span><br><span class="line">    NSLog(@&quot;&gt;3&quot;);</span><br><span class="line">    Cat *cat1 = [[Cat alloc] init];</span><br><span class="line">    NSLog(@&quot;&gt;4&quot;);</span><br><span class="line">    Dog *dog1 = [[Dog alloc] init];</span><br><span class="line">    return YES;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
+<p>####console output</p>
+<figure class="highlight plain"><figcaption><span>Animal initialize with Animal</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">in Animal load Animal</span><br><span class="line">&gt;1</span><br><span class="line">in Animal initialize with Cat</span><br><span class="line">&gt;2</span><br><span class="line">in Animal initialize with Dog</span><br><span class="line">&gt;3</span><br><span class="line">&gt;4</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/05/09/objc_load_initialize/" data-id="cinzjtyh300048d6uewzzplts" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/objective-c/">objective-c</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-ios_appdelegate_lifecycle" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/09/ios_appdelegate_lifecycle/" class="article-date">
+  <time datetime="2016-05-09T05:02:43.000Z" itemprop="datePublished">2016-05-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/09/ios_appdelegate_lifecycle/">ios lifecycle event</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>1.启动<br>application:didFinishLaunchingWithOptions<br>applicationDidBecomeActive</p>
+<p>2.Home键退出/锁屏键退出/电话进来<br>applicationWillResignActive<br>applicationDidEnterBackground</p>
+<p>3.后台启动<br>applicationWillEnterForeground<br>applicationDidBecomeActive</p>
+<p>4.前台接收到通知<br>application:didReceiveLocalNotification 0<br>(UIApplicationStateActive)</p>
+<p>5.前台接收到通知(不会触发回调事件)<br>此时在notification bar 不会看到记录</p>
+<p>5.1点击(通知)<br>applicationWillEnterForeground<br>application:didReceiveLocalNotification 1<br>(UIApplicationStateInactive)<br>applicationDidBecomeActive</p>
+<p>5.2未启动的时候点击通知<br>application:didFinishLaunchingWithOptions<br>(UIApplicationLaunchOptionsLocalNotificationKey)<br>applicationDidBecomeActive</p>
+<p>6.前台状态下 下拉通知界面<br>applicationWillResignActive</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/05/09/ios_appdelegate_lifecycle/" data-id="cinzjtyh100038d6ujiwdrs6d" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ios/">ios</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-2016-03-11-15-04" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -91,7 +178,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/09/2016-03-11-15-04/" data-id="cinzjfzz20000586uozf5kd69" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/09/2016-03-11-15-04/" data-id="cinzjtygn00008d6u1pyi0vvw" class="article-share-link">Share</a>
       
       
     </footer>
@@ -128,7 +215,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/09/2016-03-14-10-17/" data-id="cinzjfzzb0001586u45jjkz17" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/09/2016-03-14-10-17/" data-id="cinzjtygt00018d6ui04ono2x" class="article-share-link">Share</a>
       
       
     </footer>
@@ -165,7 +252,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/09/2016-03-15-11-11/" data-id="cinzjfzzf0002586uyjby91q4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/09/2016-03-15-11-11/" data-id="cinzjtygx00028d6u24s56io6" class="article-share-link">Share</a>
       
       
     </footer>
@@ -202,7 +289,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/09/2016-03-21-10-32/" data-id="cinzjfzzj0003586up5y0en2s" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/09/2016-03-21-10-32/" data-id="cinzjtyi400098d6ucli5ywys" class="article-share-link">Share</a>
       
       
     </footer>
@@ -221,13 +308,27 @@
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ios/">ios</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/objective-c/">objective-c</a></li></ul>
+    </div>
+  </div>
+
 
   
     
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/ios/" style="font-size: 10px;">ios</a> <a href="/tags/objective-c/" style="font-size: 10px;">objective-c</a>
+    </div>
+  </div>
+
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Arkiv</h3>
+    <h3 class="widget-title">Archives</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li></ul>
     </div>
@@ -237,9 +338,17 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Siste innlegg</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2016/05/09/objc_load_initialize/">NSObject load 和 initialize 的调用时间和次数</a>
+          </li>
+        
+          <li>
+            <a href="/2016/05/09/ios_appdelegate_lifecycle/">ios lifecycle event</a>
+          </li>
         
           <li>
             <a href="/2016/05/09/2016-03-11-15-04/">swift 通过 string 创建 object</a>
@@ -251,10 +360,6 @@
         
           <li>
             <a href="/2016/05/09/2016-03-15-11-11/">swift NSEventModifierFlags &#39;&amp;&#39; &#39;|&#39; 操作</a>
-          </li>
-        
-          <li>
-            <a href="/2016/05/09/2016-03-21-10-32/">KVO 几个options</a>
           </li>
         
       </ul>
