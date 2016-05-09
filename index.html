@@ -93,46 +93,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/09/objc_load_initialize/" data-id="cio04tku6000qlk6u1reva4ru" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/objc/">objc</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-CWInterface" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/05/09/CWInterface/" class="article-date">
-  <time datetime="2016-05-09T02:55:37.000Z" itemprop="datePublished">2016-05-09</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/09/CWInterface/">cocoa 查看无线是否打开 可链接的wifi列表</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">CWInterface *wifi = [CWWiFiClient sharedWiFiClient].interface;</span><br><span class="line"> </span><br><span class="line"><span class="built_in">NSLog</span>(<span class="string">@"interfaceName: %@"</span>, wifi.interfaceName);</span><br><span class="line"><span class="built_in">NSLog</span>(<span class="string">@"ssid: %@"</span>, wifi.ssid);</span><br><span class="line"><span class="built_in">NSLog</span>(<span class="string">@"powerOn: %@"</span>, @(wifi.powerOn));</span><br><span class="line"> </span><br><span class="line"><span class="built_in">NSSet</span>&lt;CWNetwork *&gt; *result = [wifi scanForNetworksWithName:<span class="literal">nil</span> error:<span class="literal">nil</span>];</span><br><span class="line"><span class="built_in">NSLog</span>(<span class="string">@"可连接的wifi列表"</span>);</span><br><span class="line"><span class="keyword">for</span> (CWNetwork *each <span class="keyword">in</span> result) &#123;</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"---&gt;%@"</span>,each.ssid);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/09/CWInterface/" data-id="cio04tksm0000lk6ulondgzh3" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/09/objc_load_initialize/" data-id="cio04xsys000xmz6ui71l0c48" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/objc/">objc</a></li></ul>
@@ -171,7 +132,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/09/KVO_options/" data-id="cio04tkt40004lk6utomft9m8" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/09/KVO_options/" data-id="cio04xsxl0009mz6uaufwrvtj" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/objc/">objc</a></li></ul>
@@ -210,7 +171,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/09/NSEventModifierFlags/" data-id="cio04tkt60006lk6ujf5zz5u0" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/09/NSEventModifierFlags/" data-id="cio04xsxp000bmz6ubl1v5iry" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/swift/">swift</a></li></ul>
@@ -249,10 +210,49 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/09/swift_string_2_object/" data-id="cio04tkuk0010lk6uzljqzfhx" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/09/swift_string_2_object/" data-id="cio04xszd0013mz6u44pr3x7b" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/swift/">swift</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-CWInterface" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/09/CWInterface/" class="article-date">
+  <time datetime="2016-05-09T02:55:37.000Z" itemprop="datePublished">2016-05-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/09/CWInterface/">cocoa 查看无线是否打开 可链接的wifi列表</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">CWInterface *wifi = [CWWiFiClient sharedWiFiClient].interface;</span><br><span class="line"> </span><br><span class="line"><span class="built_in">NSLog</span>(<span class="string">@"interfaceName: %@"</span>, wifi.interfaceName);</span><br><span class="line"><span class="built_in">NSLog</span>(<span class="string">@"ssid: %@"</span>, wifi.ssid);</span><br><span class="line"><span class="built_in">NSLog</span>(<span class="string">@"powerOn: %@"</span>, @(wifi.powerOn));</span><br><span class="line"> </span><br><span class="line"><span class="built_in">NSSet</span>&lt;CWNetwork *&gt; *result = [wifi scanForNetworksWithName:<span class="literal">nil</span> error:<span class="literal">nil</span>];</span><br><span class="line"><span class="built_in">NSLog</span>(<span class="string">@"可连接的wifi列表"</span>);</span><br><span class="line"><span class="keyword">for</span> (CWNetwork *each <span class="keyword">in</span> result) &#123;</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"---&gt;%@"</span>,each.ssid);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/05/09/CWInterface/" data-id="cio04xsyh000qmz6u28aatj06" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/objc/">objc</a></li></ul>
 
     </footer>
   </div>
@@ -294,7 +294,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/09/layer_backed/" data-id="cio04tkuh000xlk6uq3nkfnz8" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/09/layer_backed/" data-id="cio04xsyo000vmz6uym3x15hl" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cocoa/">cocoa</a></li></ul>
@@ -334,7 +334,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/04/09/bash_history/" data-id="cio04tktj000dlk6ut74oejiw" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/04/09/bash_history/" data-id="cio04xsxv000fmz6uj1gr4zgj" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bash/">bash</a></li></ul>
@@ -373,7 +373,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/04/08/nsevent_global_monitor/" data-id="cio04tku3000nlk6uam2ifh7r" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/04/08/nsevent_global_monitor/" data-id="cio04xsyl000tmz6uf0hyas9x" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/osx/">osx</a></li></ul>
@@ -412,7 +412,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/04/08/ios_camera_authorization/" data-id="cio04tktw000ilk6ulh4lqkzc" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/04/08/ios_camera_authorization/" data-id="cio04xsyb000mmz6um1o8q1pa" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ios/">ios</a></li></ul>
@@ -463,7 +463,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/25/swift_2.2_changelog/" data-id="cio04tku9000slk6uo49lbj77" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/03/25/swift_2.2_changelog/" data-id="cio04xsyz000zmz6ubh7yr74r" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/swift/">swift</a></li></ul>
@@ -527,10 +527,6 @@
           </li>
         
           <li>
-            <a href="/2016/05/09/CWInterface/">cocoa 查看无线是否打开 可链接的wifi列表</a>
-          </li>
-        
-          <li>
             <a href="/2016/05/09/KVO_options/">KVO 几个options</a>
           </li>
         
@@ -540,6 +536,10 @@
         
           <li>
             <a href="/2016/05/09/swift_string_2_object/">swift 通过 string 创建 object</a>
+          </li>
+        
+          <li>
+            <a href="/2016/05/09/CWInterface/">cocoa 查看无线是否打开 可链接的wifi列表</a>
           </li>
         
       </ul>
