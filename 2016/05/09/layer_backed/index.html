@@ -3,18 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Get image type from NSData | 跑位一脚</title>
+  <title>Layer-Backed | 跑位一脚</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1234567891011121314151617+ (NSString *)contentTypeForImageData:(NSData *)data &amp;#123;    uint8_t c;    [data getBytes:&amp;amp;c length:1];        switch (c) &amp;#123;        case 0xFF:            return @&quot;im">
+  <meta name="description" content="12345678layer-backed view = false	-(void) drawRectlayer-backed view = true	wantsUpdateLayer = true		-(BOOL) wantsUpdateLayer	wantsUpdateLayer = false		- (void)drawRect:(NSRect)dirtyRect
+Layer-Backed V">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Get image type from NSData">
-<meta property="og:url" content="http://yoursite.com/2016/03/22/image_data_from_nsdata/index.html">
+<meta property="og:title" content="Layer-Backed">
+<meta property="og:url" content="http://yoursite.com/2016/05/09/layer_backed/index.html">
 <meta property="og:site_name" content="跑位一脚">
-<meta property="og:description" content="1234567891011121314151617+ (NSString *)contentTypeForImageData:(NSData *)data &amp;#123;    uint8_t c;    [data getBytes:&amp;amp;c length:1];        switch (c) &amp;#123;        case 0xFF:            return @&quot;im">
-<meta property="og:updated_time" content="2016-05-09T06:06:59.000Z">
+<meta property="og:description" content="12345678layer-backed view = false	-(void) drawRectlayer-backed view = true	wantsUpdateLayer = true		-(BOOL) wantsUpdateLayer	wantsUpdateLayer = false		- (void)drawRect:(NSRect)dirtyRect
+Layer-Backed V">
+<meta property="og:updated_time" content="2016-05-09T12:30:13.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Get image type from NSData">
-<meta name="twitter:description" content="1234567891011121314151617+ (NSString *)contentTypeForImageData:(NSData *)data &amp;#123;    uint8_t c;    [data getBytes:&amp;amp;c length:1];        switch (c) &amp;#123;        case 0xFF:            return @&quot;im">
+<meta name="twitter:title" content="Layer-Backed">
+<meta name="twitter:description" content="12345678layer-backed view = false	-(void) drawRectlayer-backed view = true	wantsUpdateLayer = true		-(BOOL) wantsUpdateLayer	wantsUpdateLayer = false		- (void)drawRect:(NSRect)dirtyRect
+Layer-Backed V">
   
     <link rel="alternate" href="/atom.xml" title="跑位一脚" type="application/atom+xml">
   
@@ -63,10 +66,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-image_data_from_nsdata" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-layer_backed" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/03/22/image_data_from_nsdata/" class="article-date">
-  <time datetime="2016-03-22T01:12:00.000Z" itemprop="datePublished">2016-03-22</time>
+    <a href="/2016/05/09/layer_backed/" class="article-date">
+  <time datetime="2016-05-09T02:54:00.000Z" itemprop="datePublished">2016-05-09</time>
 </a>
     
   </div>
@@ -77,7 +80,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      Get image type from NSData
+      Layer-Backed
     </h1>
   
 
@@ -85,15 +88,21 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">+ (<span class="built_in">NSString</span> *)contentTypeForImageData:(<span class="built_in">NSData</span> *)data &#123;</span><br><span class="line">    uint8_t c;</span><br><span class="line">    [data getBytes:&amp;c length:<span class="number">1</span>];</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">switch</span> (c) &#123;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">0xFF</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="string">@"image/jpeg"</span>;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">0x89</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="string">@"image/png"</span>;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">0x47</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="string">@"image/gif"</span>;</span><br><span class="line">        <span class="keyword">case</span> <span class="number">0x49</span>:</span><br><span class="line">        <span class="keyword">case</span> <span class="number">0x4D</span>:</span><br><span class="line">            <span class="keyword">return</span> <span class="string">@"image/tiff"</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">nil</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">layer-backed view = false</span><br><span class="line">	-(void) drawRect</span><br><span class="line"></span><br><span class="line">layer-backed view = true</span><br><span class="line">	wantsUpdateLayer = true</span><br><span class="line">		-(BOOL) wantsUpdateLayer</span><br><span class="line">	wantsUpdateLayer = false</span><br><span class="line">		- (void)drawRect:(NSRect)dirtyRect</span><br></pre></td></tr></table></figure>
+<p><strong>Layer-Backed Views</strong></p>
+<p>By default, AppKit views are not backed by Core Animation layers; layer-backing support has been integrated into AppKit retroactively. But while you never have to worry about this with UIKit, with AppKit there are decisions to make. AppKit differentiates between <strong>layer-backed</strong> and <strong>layer-hosting</strong> views, and layer backing can be turned on and off on a per-view-tree basis.</p>
+<p>The most straightforward approach to enable layer backing is to set the <strong>wantsLayer</strong> property to YES on the window’s content view. This will cause all views in the window’s view tree to have their own backing layers, so there’s no need to repeatedly set this property on each individual view. This can be done in code or simply in Interface Builder’s View Effects Inspector.</p>
+<p>In contrast to iOS, on the Mac you should treat the backing layers as an implementation detail. This means you should not try to interact with the layers directly, as AppKit owns those layers. For example, on iOS you could simply say:<br>SELECT ALL</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">self</span>.layer.backgroundColor = [<span class="built_in">UIColor</span> redColor].CGColor;</span><br></pre></td></tr></table></figure>
+<p>But in AppKit, you shouldn’t touch the layer. If you want to interact with the layer in such ways, then you have to go one step further. Overriding NSView’s <strong>wantsUpdateLayer</strong> method to return YES enables you to change the layer’s properties. If you do this though, AppKit will no longer call the view’s drawRect: method. Instead, updateLayer will be called during the view update cycle, and this is where you can modify the layer.</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/22/image_data_from_nsdata/" data-id="cio02rbu5000s3l6usph4m0zy" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/09/layer_backed/" data-id="cio02rbu0000q3l6uql5u2tg6" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/objc/">objc</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cocoa/">cocoa</a></li></ul>
 
     </footer>
   </div>
@@ -101,15 +110,20 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/03/22/ios_appdelegate_lifecycle/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/05/09/2016-03-11-15-04/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          ios lifecycle event
+          swift 通过 string 创建 object
         
       </div>
     </a>
   
+  
+    <a href="/2016/04/09/bash_history/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">bash history</div>
+    </a>
   
 </nav>
 
