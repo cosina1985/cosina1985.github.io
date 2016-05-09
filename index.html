@@ -53,7 +53,7 @@
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Søk"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -86,63 +86,17 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">Animal</span> : <span class="title">NSObject</span>  @<span class="title">end</span></span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">Cat</span> : <span class="title">Animal</span> @<span class="title">end</span></span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">Dog</span> : <span class="title">Animal</span> @<span class="title">end</span></span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">Animal</span></span></span><br><span class="line"></span><br><span class="line">+ (<span class="keyword">void</span>)load &#123;</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"in Animal load %@"</span>,<span class="built_in">NSStringFromClass</span>([<span class="keyword">self</span> class]));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">+(<span class="keyword">void</span>) initialize&#123;</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"in Animal initialize with %@"</span>,<span class="built_in">NSStringFromClass</span>([<span class="keyword">self</span> class]));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@end</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">Cat</span></span></span><br><span class="line"><span class="keyword">@end</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">Dog</span></span></span><br><span class="line"><span class="keyword">@end</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">AppDelegate</span></span></span><br><span class="line"></span><br><span class="line">- (<span class="built_in">BOOL</span>)application:(<span class="built_in">UIApplication</span> *)application didFinishLaunchingWithOptions:(<span class="built_in">NSDictionary</span> *)launchOptions &#123;</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"&gt;1"</span>);</span><br><span class="line">    Cat *cat0 = [[Cat alloc] init];</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"&gt;2"</span>);</span><br><span class="line">    Dog *dog0 = [[Dog alloc] init];</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"&gt;3"</span>);</span><br><span class="line">    Cat *cat1 = [[Cat alloc] init];</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"&gt;4"</span>);</span><br><span class="line">    Dog *dog1 = [[Dog alloc] init];</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">YES</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@end</span></span><br></pre></td></tr></table></figure>
+        <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">Animal</span> : <span class="title">NSObject</span>  @<span class="title">end</span></span></span><br><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">Cat</span> : <span class="title">Animal</span> @<span class="title">end</span></span></span><br><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">Dog</span> : <span class="title">Animal</span> @<span class="title">end</span></span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">Animal</span></span></span><br><span class="line">+ (<span class="keyword">void</span>)load &#123;</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"in Animal load %@"</span>,<span class="built_in">NSStringFromClass</span>([<span class="keyword">self</span> class]));</span><br><span class="line">&#125;</span><br><span class="line">+(<span class="keyword">void</span>) initialize&#123;</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"in Animal initialize with %@"</span>,<span class="built_in">NSStringFromClass</span>([<span class="keyword">self</span> class]));</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">@end</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">Cat</span> @<span class="title">end</span></span></span><br><span class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">Dog</span> @<span class="title">end</span></span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">AppDelegate</span></span></span><br><span class="line">- (<span class="built_in">BOOL</span>)application:(<span class="built_in">UIApplication</span> *)application didFinishLaunchingWithOptions:(<span class="built_in">NSDictionary</span> *)launchOptions &#123;</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"&gt;1"</span>);</span><br><span class="line">    Cat *cat0 = [[Cat alloc] init];</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"&gt;2"</span>);</span><br><span class="line">    Dog *dog0 = [[Dog alloc] init];</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"&gt;3"</span>);</span><br><span class="line">    Cat *cat1 = [[Cat alloc] init];</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"&gt;4"</span>);</span><br><span class="line">    Dog *dog1 = [[Dog alloc] init];</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">YES</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">@end</span></span><br></pre></td></tr></table></figure>
 <p>####console output</p>
 <figure class="highlight plain"><figcaption><span>Animal initialize with Animal</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">in Animal load Animal</span><br><span class="line">&gt;1</span><br><span class="line">in Animal initialize with Cat</span><br><span class="line">&gt;2</span><br><span class="line">in Animal initialize with Dog</span><br><span class="line">&gt;3</span><br><span class="line">&gt;4</span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/09/objc_load_initialize/" data-id="cinzjvvxs0008946u6owbdwlc" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/09/objc_load_initialize/" data-id="cinzkf8lw000db66uxr62ckdp" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/objc/">objc</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-ios_appdelegate_lifecycle" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/05/09/ios_appdelegate_lifecycle/" class="article-date">
-  <time datetime="2016-05-09T05:02:43.000Z" itemprop="datePublished">2016-05-09</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/09/ios_appdelegate_lifecycle/">ios lifecycle event</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>1.启动<br>application:didFinishLaunchingWithOptions<br>applicationDidBecomeActive</p>
-<p>2.Home键退出/锁屏键退出/电话进来<br>applicationWillResignActive<br>applicationDidEnterBackground</p>
-<p>3.后台启动<br>applicationWillEnterForeground<br>applicationDidBecomeActive</p>
-<p>4.前台接收到通知<br>application:didReceiveLocalNotification 0<br>(UIApplicationStateActive)</p>
-<p>5.前台接收到通知(不会触发回调事件)<br>此时在notification bar 不会看到记录</p>
-<p>5.1点击(通知)<br>applicationWillEnterForeground<br>application:didReceiveLocalNotification 1<br>(UIApplicationStateInactive)<br>applicationDidBecomeActive</p>
-<p>5.2未启动的时候点击通知<br>application:didFinishLaunchingWithOptions<br>(UIApplicationLaunchOptionsLocalNotificationKey)<br>applicationDidBecomeActive</p>
-<p>6.前台状态下 下拉通知界面<br>applicationWillResignActive</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/09/ios_appdelegate_lifecycle/" data-id="cinzjvvxl0004946uvv63h3oi" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ios/">ios</a></li></ul>
 
     </footer>
   </div>
@@ -178,85 +132,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/09/2016-03-11-15-04/" data-id="cinzjvvx40000946uzoysl12i" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/swift/">swift</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-2016-03-14-10-17" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/05/09/2016-03-14-10-17/" class="article-date">
-  <time datetime="2016-05-09T02:55:37.000Z" itemprop="datePublished">2016-05-09</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/09/2016-03-14-10-17/">cocoa 查看无线是否打开 可链接的wifi列表</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">CWInterface *wifi = [CWWiFiClient sharedWiFiClient].interface;</span><br><span class="line"> </span><br><span class="line"><span class="built_in">NSLog</span>(<span class="string">@"interfaceName: %@"</span>, wifi.interfaceName);</span><br><span class="line"><span class="built_in">NSLog</span>(<span class="string">@"ssid: %@"</span>, wifi.ssid);</span><br><span class="line"><span class="built_in">NSLog</span>(<span class="string">@"powerOn: %@"</span>, @(wifi.powerOn));</span><br><span class="line"> </span><br><span class="line"><span class="built_in">NSSet</span>&lt;CWNetwork *&gt; *result = [wifi scanForNetworksWithName:<span class="literal">nil</span> error:<span class="literal">nil</span>];</span><br><span class="line"><span class="built_in">NSLog</span>(<span class="string">@"可连接的wifi列表"</span>);</span><br><span class="line"><span class="keyword">for</span> (CWNetwork *each <span class="keyword">in</span> result) &#123;</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"---&gt;%@"</span>,each.ssid);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/09/2016-03-14-10-17/" data-id="cinzjvvxb0001946ujcdj3eai" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/objc/">objc</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-2016-03-15-11-11" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/05/09/2016-03-15-11-11/" class="article-date">
-  <time datetime="2016-05-09T02:55:37.000Z" itemprop="datePublished">2016-05-09</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/09/2016-03-15-11-11/">swift NSEventModifierFlags &#39;&amp;&#39; &#39;|&#39; 操作</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> flags = <span class="type">NSEventModifierFlags</span>(rawValue: <span class="type">NSEventModifierFlags</span>.<span class="type">NumericPadKeyMask</span>.rawValue | <span class="type">NSEventModifierFlags</span>.<span class="type">NumericPadKeyMask</span>.rawValue)</span><br><span class="line">      <span class="keyword">if</span> flags.<span class="built_in">contains</span>(<span class="type">NSEventModifierFlags</span>.<span class="type">NumericPadKeyMask</span>) &#123;</span><br><span class="line"> </span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/09/2016-03-15-11-11/" data-id="cinzjvvxi0003946ufpugzpsk" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/09/2016-03-11-15-04/" data-id="cinzkf8kl0000b66uqg6bq8zu" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/swift/">swift</a></li></ul>
@@ -295,7 +171,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/09/2016-03-21-10-32/" data-id="cinzjvvxn0006946ubisgnop0" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/09/2016-03-21-10-32/" data-id="cinzkf8l30003b66u2rste42k" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/objc/">objc</a></li></ul>
@@ -307,7 +183,297 @@
 
 
   
+    <article id="post-2016-03-14-10-17" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/09/2016-03-14-10-17/" class="article-date">
+  <time datetime="2016-05-09T02:55:37.000Z" itemprop="datePublished">2016-05-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/09/2016-03-14-10-17/">cocoa 查看无线是否打开 可链接的wifi列表</a>
+    </h1>
+  
 
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">CWInterface *wifi = [CWWiFiClient sharedWiFiClient].interface;</span><br><span class="line"> </span><br><span class="line"><span class="built_in">NSLog</span>(<span class="string">@"interfaceName: %@"</span>, wifi.interfaceName);</span><br><span class="line"><span class="built_in">NSLog</span>(<span class="string">@"ssid: %@"</span>, wifi.ssid);</span><br><span class="line"><span class="built_in">NSLog</span>(<span class="string">@"powerOn: %@"</span>, @(wifi.powerOn));</span><br><span class="line"> </span><br><span class="line"><span class="built_in">NSSet</span>&lt;CWNetwork *&gt; *result = [wifi scanForNetworksWithName:<span class="literal">nil</span> error:<span class="literal">nil</span>];</span><br><span class="line"><span class="built_in">NSLog</span>(<span class="string">@"可连接的wifi列表"</span>);</span><br><span class="line"><span class="keyword">for</span> (CWNetwork *each <span class="keyword">in</span> result) &#123;</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"---&gt;%@"</span>,each.ssid);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/05/09/2016-03-14-10-17/" data-id="cinzkf8l50004b66uatl5w4jo" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/objc/">objc</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-2016-03-15-11-11" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/09/2016-03-15-11-11/" class="article-date">
+  <time datetime="2016-05-09T02:55:37.000Z" itemprop="datePublished">2016-05-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/09/2016-03-15-11-11/">swift NSEventModifierFlags &#39;&amp;&#39; &#39;|&#39; 操作</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> flags = <span class="type">NSEventModifierFlags</span>(rawValue: <span class="type">NSEventModifierFlags</span>.<span class="type">NumericPadKeyMask</span>.rawValue | <span class="type">NSEventModifierFlags</span>.<span class="type">NumericPadKeyMask</span>.rawValue)</span><br><span class="line">      <span class="keyword">if</span> flags.<span class="built_in">contains</span>(<span class="type">NSEventModifierFlags</span>.<span class="type">NumericPadKeyMask</span>) &#123;</span><br><span class="line"> </span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/05/09/2016-03-15-11-11/" data-id="cinzkf8ku0001b66uw68yqqn0" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/swift/">swift</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-bash_history" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/04/09/bash_history/" class="article-date">
+  <time datetime="2016-04-09T01:27:00.000Z" itemprop="datePublished">2016-04-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/09/bash_history/">bash history</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">history</span></span><br><span class="line"><span class="built_in">history</span> n</span><br><span class="line"><span class="built_in">history</span> -n</span><br><span class="line"><span class="built_in">history</span> | grep xx</span><br><span class="line">!n Expand to <span class="built_in">command</span> with <span class="built_in">history</span> number <span class="string">"n"</span>.</span><br><span class="line">!-n Expand to <span class="built_in">command</span> that was <span class="string">"n"</span> number of commands before the current <span class="built_in">command</span> <span class="keyword">in</span> history.</span><br><span class="line">!xxx execute the last <span class="built_in">command</span> <span class="built_in">which</span> start with xxx</span><br><span class="line">!?xxx? execute the last <span class="built_in">command</span> <span class="built_in">which</span> contain <span class="string">"xxx"</span></span><br><span class="line">!!  Expand to the last <span class="built_in">command</span></span><br><span class="line"></span><br><span class="line">touch /etc/hello</span><br><span class="line">sudo !!</span><br></pre></td></tr></table></figure>
+<p>ctrl-R  search bash</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/04/09/bash_history/" data-id="cinzkf8lj000ab66uyrt059fe" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bash/">bash</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-nsevent_global_monitor" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/04/08/nsevent_global_monitor/" class="article-date">
+  <time datetime="2016-04-08T10:54:00.000Z" itemprop="datePublished">2016-04-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/08/nsevent_global_monitor/">监听全局事件</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">[NSEvent addGlobalMonitorForEventsMatchingMask:NSKeyUpMask </span><br><span class="line">	handler:^(NSEvent * _Nonnull event) &#123;</span><br><span class="line">        [self handleEvent:event];</span><br><span class="line">    &#125;];</span><br><span class="line">    </span><br><span class="line">-(BOOL) handleEvent:(NSEvent *) event&#123;</span><br><span class="line">const NSUInteger kNotAlt = NSAlternateKeyMask | NSShiftKeyMask | NSCommandKeyMask;</span><br><span class="line">	if ((event.modifierFlags &amp; NSControlKeyMask) != 0</span><br><span class="line">	   &amp;&amp;</span><br><span class="line">	   ((event.modifierFlags &amp; kNotAlt) == 0)</span><br><span class="line">	   &amp;&amp;</span><br><span class="line">	   [event.charactersIgnoringModifiers isEqualToString:@&quot;x&quot;]) &#123;</span><br><span class="line">		.....</span><br><span class="line">		</span><br><span class="line">		// 激活app</span><br><span class="line">	   [NSApp activateIgnoringOtherApps:YES];</span><br><span class="line">	   return YES;</span><br><span class="line">	&#125;</span><br><span class="line">	return NO;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/04/08/nsevent_global_monitor/" data-id="cinzkf8n0000rb66ul2x75k9v" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/osx/">osx</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-ios_camera_authorization" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/04/08/ios_camera_authorization/" class="article-date">
+  <time datetime="2016-04-08T10:26:00.000Z" itemprop="datePublished">2016-04-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/08/ios_camera_authorization/">AVAuthorizationStatus Camera</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">- (IBAction)goToCamera&#123;</span><br><span class="line">    AVAuthorizationStatus authStatus = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];</span><br><span class="line">    if(authStatus == AVAuthorizationStatusAuthorized)&#123;</span><br><span class="line">        [self popCamera];</span><br><span class="line">    &#125; else if(authStatus == AVAuthorizationStatusNotDetermined) &#123;</span><br><span class="line">        NSLog(@"%@", @"Camera access not determined. Ask for permission.");</span><br><span class="line">        [AVCaptureDevice requestAccessForMediaType:AVMediaTypeVideo </span><br><span class="line">        completionHandler:^(BOOL granted)&#123;</span><br><span class="line">            if(granted) &#123;</span><br><span class="line">                NSLog(@"Granted access to %@", AVMediaTypeVideo);</span><br><span class="line">                [self popCamera];</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                NSLog(@"Not granted access to %@", AVMediaTypeVideo);</span><br><span class="line">                [self camDenied];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;];</span><br><span class="line">    &#125; else if (authStatus == AVAuthorizationStatusRestricted) &#123;</span><br><span class="line">        // My own Helper class is used here to pop a dialog in one simple line.</span><br><span class="line">        [Helper popAlertMessageWithTitle:@"Error" </span><br><span class="line">        alertText:@"You've been restricted from using the camera on this device. </span><br><span class="line">        Without camera access this feature won't work. Please </span><br><span class="line">        contact the device owner so they can give you access."];</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        [self camDenied];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/04/08/ios_camera_authorization/" data-id="cinzkf8n8000vb66ugn8cdp1w" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ios/">ios</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-swift_2.2_changelog" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/03/25/swift_2.2_changelog/" class="article-date">
+  <time datetime="2016-03-25T07:31:00.000Z" itemprop="datePublished">2016-03-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/25/swift_2.2_changelog/">Swift 2.2 changelog</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li>++ and – are deprecated</li>
+<li>Traditional C-style for loops are deprecated</li>
+<li>Arrays and other slice types now have removeFirst()</li>
+<li>You can now compare tuples</li>
+<li>Tuple splat syntax is deprecated</li>
+<li>More keywords can be used as argument labels</li>
+<li>var parameters have been deprecated</li>
+<li>Renamed debug identifiers: #line, #function, #file</li>
+<li>Stringified selectors are deprecated</li>
+<li>Compile-time Swift version checking </li>
+</ul>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#<span class="keyword">if</span> swift(&gt;=<span class="number">2.2</span>)</span><br><span class="line">	<span class="built_in">print</span>(<span class="string">"Running Swift 2.2 or later"</span>)</span><br><span class="line">#<span class="keyword">else</span></span><br><span class="line">	<span class="built_in">print</span>(<span class="string">"Running Swift 2.1 or earlier"</span>)</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/03/25/swift_2.2_changelog/" data-id="cinzkf8mw000qb66uhbpc3sz1" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/swift/">swift</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-disable_nap" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/03/24/disable_nap/" class="article-date">
+  <time datetime="2016-03-24T02:54:00.000Z" itemprop="datePublished">2016-03-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/24/disable_nap/">Disable App Nap in MacOS</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><em>from 10.9</em><br><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> ([[<span class="built_in">NSProcessInfo</span> processInfo] respondsToSelector:<span class="keyword">@selector</span>(beginActivityWithOptions:reason:)]) &#123;</span><br><span class="line"> [[<span class="built_in">NSProcessInfo</span> processInfo] beginActivityWithOptions:<span class="number">0x00FFFFFF</span> reason:<span class="string">@"receiving OSC messages"</span>]; </span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/03/24/disable_nap/" data-id="cinzkf8nm000xb66uzenjyplu" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/objc-osx/">objc,osx</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+
+
+  <nav id="page-nav">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">__('next') &raquo;</a>
+  </nav>
 </section>
         
           <aside id="sidebar">
@@ -319,7 +485,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ios/">ios</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/objc/">objc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/swift/">swift</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/bash/">bash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ios/">ios</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/objc/">objc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/objc-osx/">objc,osx</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/osx/">osx</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/swift/">swift</a></li></ul>
     </div>
   </div>
 
@@ -329,16 +495,16 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/ios/" style="font-size: 10px;">ios</a> <a href="/tags/objc/" style="font-size: 20px;">objc</a> <a href="/tags/swift/" style="font-size: 15px;">swift</a>
+      <a href="/tags/bash/" style="font-size: 10px;">bash</a> <a href="/tags/ios/" style="font-size: 13.33px;">ios</a> <a href="/tags/objc/" style="font-size: 20px;">objc</a> <a href="/tags/objc-osx/" style="font-size: 10px;">objc,osx</a> <a href="/tags/osx/" style="font-size: 13.33px;">osx</a> <a href="/tags/swift/" style="font-size: 16.67px;">swift</a>
     </div>
   </div>
 
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Arkiv</h3>
+    <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a></li></ul>
     </div>
   </div>
 
@@ -346,7 +512,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Siste innlegg</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
         
@@ -355,11 +521,11 @@
           </li>
         
           <li>
-            <a href="/2016/05/09/ios_appdelegate_lifecycle/">ios lifecycle event</a>
+            <a href="/2016/05/09/2016-03-11-15-04/">swift 通过 string 创建 object</a>
           </li>
         
           <li>
-            <a href="/2016/05/09/2016-03-11-15-04/">swift 通过 string 创建 object</a>
+            <a href="/2016/05/09/2016-03-21-10-32/">KVO 几个options</a>
           </li>
         
           <li>

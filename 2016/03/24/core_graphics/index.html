@@ -3,18 +3,33 @@
 <head>
   <meta charset="utf-8">
   
-  <title>swift NSEventModifierFlags &#39;&amp;&#39; &#39;|&#39; 操作 | 跑位一脚</title>
+  <title>Core Graphics | 跑位一脚</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1234let flags = NSEventModifierFlags(rawValue: NSEventModifierFlags.NumericPadKeyMask.rawValue | NSEventModifierFlags.NumericPadKeyMask.rawValue)      if flags.contains(NSEventModifierFlags.NumericPad">
+  <meta name="description" content="画圆
+123var path = UIBezierPath(ovalInRect: rect)   fillColor.setFill()   path.fill()
+创建path
+1var plusPath = UIBezierPath()
+创建扇形
+12345678910111213//2 - draw the outer arcvar outlinePath = UIBezierPath(a">
 <meta property="og:type" content="article">
-<meta property="og:title" content="swift NSEventModifierFlags '&' '|' 操作">
-<meta property="og:url" content="http://yoursite.com/2016/05/09/2016-03-15-11-11/index.html">
+<meta property="og:title" content="Core Graphics">
+<meta property="og:url" content="http://yoursite.com/2016/03/24/core_graphics/index.html">
 <meta property="og:site_name" content="跑位一脚">
-<meta property="og:description" content="1234let flags = NSEventModifierFlags(rawValue: NSEventModifierFlags.NumericPadKeyMask.rawValue | NSEventModifierFlags.NumericPadKeyMask.rawValue)      if flags.contains(NSEventModifierFlags.NumericPad">
-<meta property="og:updated_time" content="2016-05-09T05:10:45.000Z">
+<meta property="og:description" content="画圆
+123var path = UIBezierPath(ovalInRect: rect)   fillColor.setFill()   path.fill()
+创建path
+1var plusPath = UIBezierPath()
+创建扇形
+12345678910111213//2 - draw the outer arcvar outlinePath = UIBezierPath(a">
+<meta property="og:updated_time" content="2016-05-09T05:20:32.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="swift NSEventModifierFlags '&' '|' 操作">
-<meta name="twitter:description" content="1234let flags = NSEventModifierFlags(rawValue: NSEventModifierFlags.NumericPadKeyMask.rawValue | NSEventModifierFlags.NumericPadKeyMask.rawValue)      if flags.contains(NSEventModifierFlags.NumericPad">
+<meta name="twitter:title" content="Core Graphics">
+<meta name="twitter:description" content="画圆
+123var path = UIBezierPath(ovalInRect: rect)   fillColor.setFill()   path.fill()
+创建path
+1var plusPath = UIBezierPath()
+创建扇形
+12345678910111213//2 - draw the outer arcvar outlinePath = UIBezierPath(a">
   
     <link rel="alternate" href="/atom.xml" title="跑位一脚" type="application/atom+xml">
   
@@ -63,10 +78,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-2016-03-15-11-11" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-core_graphics" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/05/09/2016-03-15-11-11/" class="article-date">
-  <time datetime="2016-05-09T02:55:37.000Z" itemprop="datePublished">2016-05-09</time>
+    <a href="/2016/03/24/core_graphics/" class="article-date">
+  <time datetime="2016-03-24T02:54:00.000Z" itemprop="datePublished">2016-03-24</time>
 </a>
     
   </div>
@@ -77,7 +92,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      swift NSEventModifierFlags &#39;&amp;&#39; &#39;|&#39; 操作
+      Core Graphics
     </h1>
   
 
@@ -85,15 +100,21 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> flags = <span class="type">NSEventModifierFlags</span>(rawValue: <span class="type">NSEventModifierFlags</span>.<span class="type">NumericPadKeyMask</span>.rawValue | <span class="type">NSEventModifierFlags</span>.<span class="type">NumericPadKeyMask</span>.rawValue)</span><br><span class="line">      <span class="keyword">if</span> flags.<span class="built_in">contains</span>(<span class="type">NSEventModifierFlags</span>.<span class="type">NumericPadKeyMask</span>) &#123;</span><br><span class="line"> </span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
+        <p>画圆</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> path = <span class="type">UIBezierPath</span>(ovalInRect: rect)</span><br><span class="line">   fillColor.setFill()</span><br><span class="line">   path.fill()</span><br></pre></td></tr></table></figure>
+<p>创建path</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> plusPath = <span class="type">UIBezierPath</span>()</span><br></pre></td></tr></table></figure>
+<p>创建扇形</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//2 - draw the outer arc</span></span><br><span class="line"><span class="keyword">var</span> outlinePath = <span class="type">UIBezierPath</span>(arcCenter: center, </span><br><span class="line">                                  radius: bounds.width/<span class="number">2</span> - <span class="number">2.5</span>,</span><br><span class="line">                              startAngle: startAngle, </span><br><span class="line">                                endAngle: outlineEndAngle,</span><br><span class="line">                               clockwise: <span class="literal">true</span>)</span><br><span class="line"> </span><br><span class="line"><span class="comment">//3 - draw the inner arc</span></span><br><span class="line">outlinePath.addArcWithCenter(center, </span><br><span class="line">                     radius: bounds.width/<span class="number">2</span> - arcWidth + <span class="number">2.5</span>,</span><br><span class="line">                 startAngle: outlineEndAngle, </span><br><span class="line">                   endAngle: startAngle, </span><br><span class="line">                  clockwise: <span class="literal">false</span>)</span><br></pre></td></tr></table></figure>
+<p>角度<br>顺时针 3点钟是0°角</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/09/2016-03-15-11-11/" data-id="cinzkf8ku0001b66uw68yqqn0" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/03/24/core_graphics/" data-id="cinzkf8la0006b66u8kslzpg4" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/swift/">swift</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/objc/">objc</a></li></ul>
 
     </footer>
   </div>
@@ -101,19 +122,19 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/05/09/2016-03-14-10-17/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/03/24/disable_nap/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          cocoa 查看无线是否打开 可链接的wifi列表
+          Disable App Nap in MacOS
         
       </div>
     </a>
   
   
-    <a href="/2016/04/09/bash_history/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2016/03/24/uitextfield_placeholder_color/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">bash history</div>
+      <div class="article-nav-title">UITextfield placeholder color</div>
     </a>
   
 </nav>
