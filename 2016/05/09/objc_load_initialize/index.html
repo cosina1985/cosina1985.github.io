@@ -11,7 +11,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/05/09/objc_load_initialize/index.html">
 <meta property="og:site_name" content="跑位一脚">
 <meta property="og:description" content="123456789101112131415161718192021222324252627282930313233343536373839@interface Animal : NSObject  @end@interface Cat : Animal @end@interface Dog : Animal @end@implementation Animal+ (void)load &amp;#123;">
-<meta property="og:updated_time" content="2016-05-09T05:04:05.000Z">
+<meta property="og:updated_time" content="2016-05-09T05:10:57.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="NSObject load 和 initialize 的调用时间和次数">
 <meta name="twitter:description" content="123456789101112131415161718192021222324252627282930313233343536373839@interface Animal : NSObject  @end@interface Cat : Animal @end@interface Dog : Animal @end@implementation Animal+ (void)load &amp;#123;">
@@ -54,7 +54,7 @@
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Søk"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -85,17 +85,17 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line">@interface Animal : NSObject  @end</span><br><span class="line"></span><br><span class="line">@interface Cat : Animal @end</span><br><span class="line"></span><br><span class="line">@interface Dog : Animal @end</span><br><span class="line"></span><br><span class="line">@implementation Animal</span><br><span class="line"></span><br><span class="line">+ (void)load &#123;</span><br><span class="line">    NSLog(@&quot;in Animal load %@&quot;,NSStringFromClass([self class]));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">+(void) initialize&#123;</span><br><span class="line">    NSLog(@&quot;in Animal initialize with %@&quot;,NSStringFromClass([self class]));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@end</span><br><span class="line"></span><br><span class="line">@implementation Cat</span><br><span class="line">@end</span><br><span class="line"></span><br><span class="line">@implementation Dog</span><br><span class="line">@end</span><br><span class="line"></span><br><span class="line">@implementation AppDelegate</span><br><span class="line"></span><br><span class="line">- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions &#123;</span><br><span class="line">    NSLog(@&quot;&gt;1&quot;);</span><br><span class="line">    Cat *cat0 = [[Cat alloc] init];</span><br><span class="line">    NSLog(@&quot;&gt;2&quot;);</span><br><span class="line">    Dog *dog0 = [[Dog alloc] init];</span><br><span class="line">    NSLog(@&quot;&gt;3&quot;);</span><br><span class="line">    Cat *cat1 = [[Cat alloc] init];</span><br><span class="line">    NSLog(@&quot;&gt;4&quot;);</span><br><span class="line">    Dog *dog1 = [[Dog alloc] init];</span><br><span class="line">    return YES;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">@end</span><br></pre></td></tr></table></figure>
+        <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">Animal</span> : <span class="title">NSObject</span>  @<span class="title">end</span></span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">Cat</span> : <span class="title">Animal</span> @<span class="title">end</span></span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">Dog</span> : <span class="title">Animal</span> @<span class="title">end</span></span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">Animal</span></span></span><br><span class="line"></span><br><span class="line">+ (<span class="keyword">void</span>)load &#123;</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"in Animal load %@"</span>,<span class="built_in">NSStringFromClass</span>([<span class="keyword">self</span> class]));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">+(<span class="keyword">void</span>) initialize&#123;</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"in Animal initialize with %@"</span>,<span class="built_in">NSStringFromClass</span>([<span class="keyword">self</span> class]));</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@end</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">Cat</span></span></span><br><span class="line"><span class="keyword">@end</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">Dog</span></span></span><br><span class="line"><span class="keyword">@end</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">AppDelegate</span></span></span><br><span class="line"></span><br><span class="line">- (<span class="built_in">BOOL</span>)application:(<span class="built_in">UIApplication</span> *)application didFinishLaunchingWithOptions:(<span class="built_in">NSDictionary</span> *)launchOptions &#123;</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"&gt;1"</span>);</span><br><span class="line">    Cat *cat0 = [[Cat alloc] init];</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"&gt;2"</span>);</span><br><span class="line">    Dog *dog0 = [[Dog alloc] init];</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"&gt;3"</span>);</span><br><span class="line">    Cat *cat1 = [[Cat alloc] init];</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"&gt;4"</span>);</span><br><span class="line">    Dog *dog1 = [[Dog alloc] init];</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">YES</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">@end</span></span><br></pre></td></tr></table></figure>
 <p>####console output</p>
 <figure class="highlight plain"><figcaption><span>Animal initialize with Animal</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">in Animal load Animal</span><br><span class="line">&gt;1</span><br><span class="line">in Animal initialize with Cat</span><br><span class="line">&gt;2</span><br><span class="line">in Animal initialize with Dog</span><br><span class="line">&gt;3</span><br><span class="line">&gt;4</span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/09/objc_load_initialize/" data-id="cinzjtyh300048d6uewzzplts" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/09/objc_load_initialize/" data-id="cinzjvvxs0008946u6owbdwlc" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/objective-c/">objective-c</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/objc/">objc</a></li></ul>
 
     </footer>
   </div>
@@ -125,7 +125,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ios/">ios</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/objective-c/">objective-c</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/ios/">ios</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/objc/">objc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/swift/">swift</a></li></ul>
     </div>
   </div>
 
@@ -135,14 +135,14 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/ios/" style="font-size: 10px;">ios</a> <a href="/tags/objective-c/" style="font-size: 10px;">objective-c</a>
+      <a href="/tags/ios/" style="font-size: 10px;">ios</a> <a href="/tags/objc/" style="font-size: 20px;">objc</a> <a href="/tags/swift/" style="font-size: 15px;">swift</a>
     </div>
   </div>
 
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
+    <h3 class="widget-title">Arkiv</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li></ul>
     </div>
@@ -152,7 +152,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">Siste innlegg</h3>
     <div class="widget">
       <ul>
         
