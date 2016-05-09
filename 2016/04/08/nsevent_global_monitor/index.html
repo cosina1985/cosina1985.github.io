@@ -11,7 +11,7 @@
 <meta property="og:url" content="http://yoursite.com/2016/04/08/nsevent_global_monitor/index.html">
 <meta property="og:site_name" content="跑位一脚">
 <meta property="og:description" content="1234567891011121314151617181920[NSEvent addGlobalMonitorForEventsMatchingMask:NSKeyUpMask 	handler:^(NSEvent * _Nonnull event) &amp;#123;        [self handleEvent:event];    &amp;#125;];    -(BOOL) handleEven">
-<meta property="og:updated_time" content="2016-05-09T05:25:51.000Z">
+<meta property="og:updated_time" content="2016-05-09T14:21:05.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="监听全局事件">
 <meta name="twitter:description" content="1234567891011121314151617181920[NSEvent addGlobalMonitorForEventsMatchingMask:NSKeyUpMask 	handler:^(NSEvent * _Nonnull event) &amp;#123;        [self handleEvent:event];    &amp;#125;];    -(BOOL) handleEven">
@@ -85,12 +85,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">[NSEvent addGlobalMonitorForEventsMatchingMask:NSKeyUpMask </span><br><span class="line">	handler:^(NSEvent * _Nonnull event) &#123;</span><br><span class="line">        [self handleEvent:event];</span><br><span class="line">    &#125;];</span><br><span class="line">    </span><br><span class="line">-(BOOL) handleEvent:(NSEvent *) event&#123;</span><br><span class="line">const NSUInteger kNotAlt = NSAlternateKeyMask | NSShiftKeyMask | NSCommandKeyMask;</span><br><span class="line">	if ((event.modifierFlags &amp; NSControlKeyMask) != 0</span><br><span class="line">	   &amp;&amp;</span><br><span class="line">	   ((event.modifierFlags &amp; kNotAlt) == 0)</span><br><span class="line">	   &amp;&amp;</span><br><span class="line">	   [event.charactersIgnoringModifiers isEqualToString:@&quot;x&quot;]) &#123;</span><br><span class="line">		.....</span><br><span class="line">		</span><br><span class="line">		// 激活app</span><br><span class="line">	   [NSApp activateIgnoringOtherApps:YES];</span><br><span class="line">	   return YES;</span><br><span class="line">	&#125;</span><br><span class="line">	return NO;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">[<span class="built_in">NSEvent</span> addGlobalMonitorForEventsMatchingMask:<span class="built_in">NSKeyUpMask</span> </span><br><span class="line">	handler:^(<span class="built_in">NSEvent</span> * _Nonnull event) &#123;</span><br><span class="line">        [<span class="keyword">self</span> handleEvent:event];</span><br><span class="line">    &#125;];</span><br><span class="line">    </span><br><span class="line">-(<span class="built_in">BOOL</span>) handleEvent:(<span class="built_in">NSEvent</span> *) event&#123;</span><br><span class="line"><span class="keyword">const</span> <span class="built_in">NSUInteger</span> kNotAlt = <span class="built_in">NSAlternateKeyMask</span> | <span class="built_in">NSShiftKeyMask</span> | <span class="built_in">NSCommandKeyMask</span>;</span><br><span class="line">	<span class="keyword">if</span> ((event.modifierFlags &amp; <span class="built_in">NSControlKeyMask</span>) != <span class="number">0</span></span><br><span class="line">	   &amp;&amp;</span><br><span class="line">	   ((event.modifierFlags &amp; kNotAlt) == <span class="number">0</span>)</span><br><span class="line">	   &amp;&amp;</span><br><span class="line">	   [event.charactersIgnoringModifiers isEqualToString:<span class="string">@"x"</span>]) &#123;</span><br><span class="line">		.....</span><br><span class="line">		</span><br><span class="line">		<span class="comment">// 激活app</span></span><br><span class="line">	   [<span class="built_in">NSApp</span> activateIgnoringOtherApps:<span class="literal">YES</span>];</span><br><span class="line">	   <span class="keyword">return</span> <span class="literal">YES</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">NO</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/04/08/nsevent_global_monitor/" data-id="cio02rbuj00103l6u1i5hf9n7" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/04/08/nsevent_global_monitor/" data-id="cio04phlm0013km6uqvxn16wj" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/osx/">osx</a></li></ul>
@@ -168,19 +168,19 @@
           </li>
         
           <li>
-            <a href="/2016/05/09/2016-03-14-10-17/">cocoa 查看无线是否打开 可链接的wifi列表</a>
+            <a href="/2016/05/09/CWInterface/">cocoa 查看无线是否打开 可链接的wifi列表</a>
           </li>
         
           <li>
-            <a href="/2016/05/09/2016-03-21-10-32/">KVO 几个options</a>
+            <a href="/2016/05/09/KVO_options/">KVO 几个options</a>
           </li>
         
           <li>
-            <a href="/2016/05/09/2016-03-15-11-11/">swift NSEventModifierFlags &#39;&amp;&#39; &#39;|&#39; 操作</a>
+            <a href="/2016/05/09/swift_string_2_object/">swift 通过 string 创建 object</a>
           </li>
         
           <li>
-            <a href="/2016/05/09/2016-03-11-15-04/">swift 通过 string 创建 object</a>
+            <a href="/2016/05/09/NSEventModifierFlags/">swift NSEventModifierFlags &#39;&amp;&#39; &#39;|&#39; 操作</a>
           </li>
         
       </ul>

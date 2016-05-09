@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>cocoa 查看无线是否打开 可链接的wifi列表 | 跑位一脚</title>
+  <title>KVO 几个options | 跑位一脚</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1234567891011CWInterface *wifi = [CWWiFiClient sharedWiFiClient].interface; NSLog(@&quot;interfaceName: %@&quot;, wifi.interfaceName);NSLog(@&quot;ssid: %@&quot;, wifi.ssid);NSLog(@&quot;powerOn: %@&quot;, @(wifi.powerOn)); NSSet&amp;">
+  <meta name="description" content="12345678NSKeyValueObservingOptions.New   新值NSKeyValueObservingOptions.Old    旧值NSKeyValueObservingOptions.Initial 注册监听的时候会立即发送NSKeyValueObservingOptions.Prior  更改之前会额外发送一次 只有 NSKeyValueObservingOption">
 <meta property="og:type" content="article">
-<meta property="og:title" content="cocoa 查看无线是否打开 可链接的wifi列表">
-<meta property="og:url" content="http://yoursite.com/2016/05/09/2016-03-14-10-17/index.html">
+<meta property="og:title" content="KVO 几个options">
+<meta property="og:url" content="http://yoursite.com/2016/05/09/KVO_options/index.html">
 <meta property="og:site_name" content="跑位一脚">
-<meta property="og:description" content="1234567891011CWInterface *wifi = [CWWiFiClient sharedWiFiClient].interface; NSLog(@&quot;interfaceName: %@&quot;, wifi.interfaceName);NSLog(@&quot;ssid: %@&quot;, wifi.ssid);NSLog(@&quot;powerOn: %@&quot;, @(wifi.powerOn)); NSSet&amp;">
-<meta property="og:updated_time" content="2016-05-09T05:10:32.000Z">
+<meta property="og:description" content="12345678NSKeyValueObservingOptions.New   新值NSKeyValueObservingOptions.Old    旧值NSKeyValueObservingOptions.Initial 注册监听的时候会立即发送NSKeyValueObservingOptions.Prior  更改之前会额外发送一次 只有 NSKeyValueObservingOption">
+<meta property="og:updated_time" content="2016-05-09T05:10:39.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="cocoa 查看无线是否打开 可链接的wifi列表">
-<meta name="twitter:description" content="1234567891011CWInterface *wifi = [CWWiFiClient sharedWiFiClient].interface; NSLog(@&quot;interfaceName: %@&quot;, wifi.interfaceName);NSLog(@&quot;ssid: %@&quot;, wifi.ssid);NSLog(@&quot;powerOn: %@&quot;, @(wifi.powerOn)); NSSet&amp;">
+<meta name="twitter:title" content="KVO 几个options">
+<meta name="twitter:description" content="12345678NSKeyValueObservingOptions.New   新值NSKeyValueObservingOptions.Old    旧值NSKeyValueObservingOptions.Initial 注册监听的时候会立即发送NSKeyValueObservingOptions.Prior  更改之前会额外发送一次 只有 NSKeyValueObservingOption">
   
     <link rel="alternate" href="/atom.xml" title="跑位一脚" type="application/atom+xml">
   
@@ -63,9 +63,9 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-2016-03-14-10-17" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-KVO_options" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/05/09/2016-03-14-10-17/" class="article-date">
+    <a href="/2016/05/09/KVO_options/" class="article-date">
   <time datetime="2016-05-09T02:55:37.000Z" itemprop="datePublished">2016-05-09</time>
 </a>
     
@@ -77,7 +77,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      cocoa 查看无线是否打开 可链接的wifi列表
+      KVO 几个options
     </h1>
   
 
@@ -85,12 +85,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">CWInterface *wifi = [CWWiFiClient sharedWiFiClient].interface;</span><br><span class="line"> </span><br><span class="line"><span class="built_in">NSLog</span>(<span class="string">@"interfaceName: %@"</span>, wifi.interfaceName);</span><br><span class="line"><span class="built_in">NSLog</span>(<span class="string">@"ssid: %@"</span>, wifi.ssid);</span><br><span class="line"><span class="built_in">NSLog</span>(<span class="string">@"powerOn: %@"</span>, @(wifi.powerOn));</span><br><span class="line"> </span><br><span class="line"><span class="built_in">NSSet</span>&lt;CWNetwork *&gt; *result = [wifi scanForNetworksWithName:<span class="literal">nil</span> error:<span class="literal">nil</span>];</span><br><span class="line"><span class="built_in">NSLog</span>(<span class="string">@"可连接的wifi列表"</span>);</span><br><span class="line"><span class="keyword">for</span> (CWNetwork *each <span class="keyword">in</span> result) &#123;</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"---&gt;%@"</span>,each.ssid);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSKeyValueObservingOptions</span>.New   新值</span><br><span class="line"><span class="built_in">NSKeyValueObservingOptions</span>.Old    旧值</span><br><span class="line"><span class="built_in">NSKeyValueObservingOptions</span>.Initial 注册监听的时候会立即发送</span><br><span class="line"><span class="built_in">NSKeyValueObservingOptions</span>.Prior  更改之前会额外发送一次</span><br><span class="line"> </span><br><span class="line">只有 <span class="built_in">NSKeyValueObservingOptions</span>.New </span><br><span class="line">和 <span class="built_in">NSKeyValueObservingOptions</span>.Old   </span><br><span class="line">会存在于 observeValueForKeyPath 方法的change dictionary中</span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/09/2016-03-14-10-17/" data-id="cio02rbss00033l6uu81r2wwz" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/09/KVO_options/" data-id="cio04phjm0004km6u1hlns1t2" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/objc/">objc</a></li></ul>
@@ -101,19 +101,19 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/05/09/objc_load_initialize/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/05/09/CWInterface/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          NSObject load 和 initialize 的调用时间和次数
+          cocoa 查看无线是否打开 可链接的wifi列表
         
       </div>
     </a>
   
   
-    <a href="/2016/05/09/2016-03-21-10-32/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2016/05/09/swift_string_2_object/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">KVO 几个options</div>
+      <div class="article-nav-title">swift 通过 string 创建 object</div>
     </a>
   
 </nav>
@@ -168,19 +168,19 @@
           </li>
         
           <li>
-            <a href="/2016/05/09/2016-03-14-10-17/">cocoa 查看无线是否打开 可链接的wifi列表</a>
+            <a href="/2016/05/09/CWInterface/">cocoa 查看无线是否打开 可链接的wifi列表</a>
           </li>
         
           <li>
-            <a href="/2016/05/09/2016-03-21-10-32/">KVO 几个options</a>
+            <a href="/2016/05/09/KVO_options/">KVO 几个options</a>
           </li>
         
           <li>
-            <a href="/2016/05/09/2016-03-15-11-11/">swift NSEventModifierFlags &#39;&amp;&#39; &#39;|&#39; 操作</a>
+            <a href="/2016/05/09/swift_string_2_object/">swift 通过 string 创建 object</a>
           </li>
         
           <li>
-            <a href="/2016/05/09/2016-03-11-15-04/">swift 通过 string 创建 object</a>
+            <a href="/2016/05/09/NSEventModifierFlags/">swift NSEventModifierFlags &#39;&amp;&#39; &#39;|&#39; 操作</a>
           </li>
         
       </ul>
