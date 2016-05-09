@@ -93,7 +93,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/09/objc_load_initialize/" data-id="cio04phky000okm6ugxj8sq5c" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/09/objc_load_initialize/" data-id="cio04tku6000qlk6u1reva4ru" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/objc/">objc</a></li></ul>
@@ -132,7 +132,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/09/CWInterface/" data-id="cio04phiz0000km6ulhi2xf09" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/09/CWInterface/" data-id="cio04tksm0000lk6ulondgzh3" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/objc/">objc</a></li></ul>
@@ -171,49 +171,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/09/KVO_options/" data-id="cio04phjm0004km6u1hlns1t2" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/09/KVO_options/" data-id="cio04tkt40004lk6utomft9m8" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/objc/">objc</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-swift_string_2_object" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/05/09/swift_string_2_object/" class="article-date">
-  <time datetime="2016-05-09T02:55:37.000Z" itemprop="datePublished">2016-05-09</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/09/swift_string_2_object/">swift 通过 string 创建 object</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">IndexViewController</span>: <span class="title">UIViewController</span></span>&#123;&#125;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">let</span> className = <span class="string">"IndexViewController"</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">let</span> bundlePath = <span class="type">NSBundle</span>.mainBundle().bundlePath</span><br><span class="line"><span class="keyword">let</span> bundleFullName = bundlePath.componentsSeparatedByString(<span class="string">"/"</span>).last</span><br><span class="line"><span class="keyword">let</span> bundleName = bundleFullName?.componentsSeparatedByString(<span class="string">"."</span>).first</span><br><span class="line"><span class="keyword">let</span> clazz = <span class="type">NSClassFromString</span>(bundleName! + <span class="string">"."</span> + className)! <span class="keyword">as</span>! <span class="type">UIViewController</span>.<span class="type">Type</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">let</span> object = clazz.<span class="keyword">init</span>()</span><br><span class="line"><span class="comment">// let object1 = Index() 普通方法</span></span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/09/swift_string_2_object/" data-id="cio04phl6000tkm6ufa8ryv1e" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/swift/">swift</a></li></ul>
 
     </footer>
   </div>
@@ -249,7 +210,46 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/09/NSEventModifierFlags/" data-id="cio04phkw000mkm6ux0lxyipl" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/09/NSEventModifierFlags/" data-id="cio04tkt60006lk6ujf5zz5u0" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/swift/">swift</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-swift_string_2_object" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/09/swift_string_2_object/" class="article-date">
+  <time datetime="2016-05-09T02:55:37.000Z" itemprop="datePublished">2016-05-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/09/swift_string_2_object/">swift 通过 string 创建 object</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">IndexViewController</span>: <span class="title">UIViewController</span></span>&#123;&#125;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">let</span> className = <span class="string">"IndexViewController"</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">let</span> bundlePath = <span class="type">NSBundle</span>.mainBundle().bundlePath</span><br><span class="line"><span class="keyword">let</span> bundleFullName = bundlePath.componentsSeparatedByString(<span class="string">"/"</span>).last</span><br><span class="line"><span class="keyword">let</span> bundleName = bundleFullName?.componentsSeparatedByString(<span class="string">"."</span>).first</span><br><span class="line"><span class="keyword">let</span> clazz = <span class="type">NSClassFromString</span>(bundleName! + <span class="string">"."</span> + className)! <span class="keyword">as</span>! <span class="type">UIViewController</span>.<span class="type">Type</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">let</span> object = clazz.<span class="keyword">init</span>()</span><br><span class="line"><span class="comment">// let object1 = Index() 普通方法</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/05/09/swift_string_2_object/" data-id="cio04tkuk0010lk6uzljqzfhx" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/swift/">swift</a></li></ul>
@@ -294,7 +294,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/09/layer_backed/" data-id="cio04phld000ykm6uksn78epy" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/09/layer_backed/" data-id="cio04tkuh000xlk6uq3nkfnz8" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cocoa/">cocoa</a></li></ul>
@@ -334,7 +334,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/04/09/bash_history/" data-id="cio04phkj000jkm6uhlwp47ou" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/04/09/bash_history/" data-id="cio04tktj000dlk6ut74oejiw" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bash/">bash</a></li></ul>
@@ -373,7 +373,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/04/08/nsevent_global_monitor/" data-id="cio04phlm0013km6uqvxn16wj" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/04/08/nsevent_global_monitor/" data-id="cio04tku3000nlk6uam2ifh7r" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/osx/">osx</a></li></ul>
@@ -412,7 +412,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/04/08/ios_camera_authorization/" data-id="cio04phkh000hkm6u538j0ihu" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/04/08/ios_camera_authorization/" data-id="cio04tktw000ilk6ulh4lqkzc" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ios/">ios</a></li></ul>
@@ -463,7 +463,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/25/swift_2.2_changelog/" data-id="cio04phl2000rkm6u7ols56g7" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/03/25/swift_2.2_changelog/" data-id="cio04tku9000slk6uo49lbj77" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/swift/">swift</a></li></ul>
@@ -535,11 +535,11 @@
           </li>
         
           <li>
-            <a href="/2016/05/09/swift_string_2_object/">swift 通过 string 创建 object</a>
+            <a href="/2016/05/09/NSEventModifierFlags/">swift NSEventModifierFlags &#39;&amp;&#39; &#39;|&#39; 操作</a>
           </li>
         
           <li>
-            <a href="/2016/05/09/NSEventModifierFlags/">swift NSEventModifierFlags &#39;&amp;&#39; &#39;|&#39; 操作</a>
+            <a href="/2016/05/09/swift_string_2_object/">swift 通过 string 创建 object</a>
           </li>
         
       </ul>

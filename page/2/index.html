@@ -64,163 +64,6 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-disable_nap" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/03/24/disable_nap/" class="article-date">
-  <time datetime="2016-03-24T02:54:00.000Z" itemprop="datePublished">2016-03-24</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/24/disable_nap/">Disable App Nap in MacOS</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><em>from 10.9</em><br><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> ([[<span class="built_in">NSProcessInfo</span> processInfo] respondsToSelector:<span class="keyword">@selector</span>(beginActivityWithOptions:reason:)]) &#123;</span><br><span class="line"> [[<span class="built_in">NSProcessInfo</span> processInfo] beginActivityWithOptions:<span class="number">0x00FFFFFF</span> reason:<span class="string">@"receiving OSC messages"</span>]; </span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/24/disable_nap/" data-id="cio04phjv0008km6u3ylp0g09" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/objc/">objc</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/osx/">osx</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-CIFilter" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/03/24/CIFilter/" class="article-date">
-  <time datetime="2016-03-24T02:54:00.000Z" itemprop="datePublished">2016-03-24</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/24/CIFilter/">CIFilter</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">+(void) adjustImage:(<span class="type">UIImage</span> *) image container:(<span class="type">UIImageView</span> *) iv&#123;</span><br><span class="line">    <span class="type">NSLog</span>(@<span class="string">"7"</span>);</span><br><span class="line">    <span class="type">CIImage</span> *beginImage = [<span class="type">CIImage</span> imageWithCGImage:image.<span class="type">CGImage</span>];</span><br><span class="line">    <span class="type">CIFilter</span> * <span class="built_in">filter</span> = [<span class="type">CIFilter</span> filterWithName:@<span class="string">"CIColorControls"</span>];</span><br><span class="line">    [<span class="built_in">filter</span> setValue:beginImage forKey:kCIInputImageKey];</span><br><span class="line">    </span><br><span class="line">    <span class="type">NSUserDefaults</span> *ud = [<span class="type">NSUserDefaults</span> standardUserDefaults];</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//  亮度  10   -1---1</span></span><br><span class="line">    float lightPercent = [[ud objectForKey:@<span class="string">"Light"</span>] floatValue];</span><br><span class="line">    float lightValue =  -<span class="number">1</span> + <span class="number">2</span>*lightPercent;</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    <span class="comment">//  对比度 -11  0---4</span></span><br><span class="line">    float contrastPercent = [[ud objectForKey:@<span class="string">"Contrast"</span>] floatValue];</span><br><span class="line">    float contrastValue =  <span class="number">0</span> + <span class="number">4</span>*contrastPercent;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//  饱和度      0---2</span></span><br><span class="line">    float bhdPercent = [[ud objectForKey:@<span class="string">"Temp"</span>] floatValue];</span><br><span class="line">    float bhdValue =  <span class="number">0</span> + <span class="number">2</span>*bhdPercent;</span><br><span class="line">    </span><br><span class="line">    [<span class="built_in">filter</span> setValue:@(lightValue) forKey:@<span class="string">"inputBrightness"</span>];</span><br><span class="line">    [<span class="built_in">filter</span> setValue:@(contrastValue)forKey:@<span class="string">"inputContrast"</span>];</span><br><span class="line">    [<span class="built_in">filter</span> setValue:@(bhdValue) forKey:@<span class="string">"inputSaturation"</span>];</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 得到过滤后的图片</span></span><br><span class="line">    <span class="type">CIImage</span> *outputImage = [<span class="built_in">filter</span> outputImage];</span><br><span class="line"><span class="comment">//    // 转换图片, 创建基于GPU的CIContext对象</span></span><br><span class="line"><span class="comment">//    CIContext *context = [CIContext contextWithOptions: nil];</span></span><br><span class="line"><span class="comment">//    CGImageRef cgimg = [context createCGImage:outputImage fromRect:[outputImage extent]];</span></span><br><span class="line">    <span class="type">UIImage</span> *newImg = [<span class="type">UIImage</span> imageWithCIImage:outputImage];</span><br><span class="line"><span class="comment">//    // 显示图片</span></span><br><span class="line">    [iv setImage:newImg];</span><br><span class="line"><span class="comment">//    // 释放C对象</span></span><br><span class="line"><span class="comment">//    CGImageRelease(cgimg);</span></span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/24/CIFilter/" data-id="cio04phj80001km6uakrmc6b3" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ios/">ios</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/swift/">swift</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-AXIsProcessTrustedWithOptions" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/03/24/AXIsProcessTrustedWithOptions/" class="article-date">
-  <time datetime="2016-03-24T02:54:00.000Z" itemprop="datePublished">2016-03-24</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/24/AXIsProcessTrustedWithOptions/">AXIsProcessTrustedWithOptions</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSDictionary</span> *options = @&#123;(<span class="keyword">id</span>)kAXTrustedCheckOptionPrompt: @YES&#125;;</span><br><span class="line"><span class="built_in">BOOL</span> accessibilityEnabled =</span><br><span class="line"> AXIsProcessTrustedWithOptions((<span class="built_in">CFDictionaryRef</span>)options);</span><br></pre></td></tr></table></figure>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> options:[<span class="type">NSString</span>:<span class="type">NSNumber</span>] = </span><br><span class="line">[<span class="type">String</span>(kAXTrustedCheckOptionPrompt.takeRetainedValue()) <span class="keyword">as</span> <span class="type">String</span>:<span class="literal">true</span>]</span><br><span class="line"><span class="keyword">let</span> accessibilityEnabled = <span class="type">AXIsProcessTrustedWithOptions</span>(options);</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/24/AXIsProcessTrustedWithOptions/" data-id="cio04phjq0006km6u6iltv62d" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/osx/">osx</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-uitextfield_placeholder_color" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/03/24/uitextfield_placeholder_color/" class="article-date">
-  <time datetime="2016-03-24T02:54:00.000Z" itemprop="datePublished">2016-03-24</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/24/uitextfield_placeholder_color/">UITextfield placeholder color</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="keyword">void</span>) drawPlaceholderInRect:(<span class="built_in">CGRect</span>)rect &#123;</span><br><span class="line">    [[<span class="built_in">UIColor</span> blueColor] setFill];</span><br><span class="line">    [<span class="keyword">self</span>.placeholder drawInRect:rect </span><br><span class="line">						withFont:<span class="keyword">self</span>.font </span><br><span class="line">				   lineBreakMode:<span class="built_in">UILineBreakModeTailTruncation</span> </span><br><span class="line">						alignment:<span class="keyword">self</span>.textAlignment];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/24/uitextfield_placeholder_color/" data-id="cio04phl8000wkm6uyii3kjwf" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/objc/">objc</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
     <article id="post-core_graphics" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/03/24/core_graphics/" class="article-date">
@@ -254,7 +97,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/24/core_graphics/" data-id="cio04phji0003km6uh11ns4a7" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/03/24/core_graphics/" data-id="cio04tkta0008lk6uvxno3qic" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/objc/">objc</a></li></ul>
@@ -293,10 +136,167 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/24/fieldeditor/" data-id="cio04phkb000ekm6u4k80qj4r" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/03/24/fieldeditor/" data-id="cio04tku0000llk6uhtd1sbqp" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cocoa/">cocoa</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-disable_nap" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/03/24/disable_nap/" class="article-date">
+  <time datetime="2016-03-24T02:54:00.000Z" itemprop="datePublished">2016-03-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/24/disable_nap/">Disable App Nap in MacOS</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><em>from 10.9</em><br><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> ([[<span class="built_in">NSProcessInfo</span> processInfo] respondsToSelector:<span class="keyword">@selector</span>(beginActivityWithOptions:reason:)]) &#123;</span><br><span class="line"> [[<span class="built_in">NSProcessInfo</span> processInfo] beginActivityWithOptions:<span class="number">0x00FFFFFF</span> reason:<span class="string">@"receiving OSC messages"</span>]; </span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/03/24/disable_nap/" data-id="cio04tktc000alk6upz9xhnuj" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/objc/">objc</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/osx/">osx</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-uitextfield_placeholder_color" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/03/24/uitextfield_placeholder_color/" class="article-date">
+  <time datetime="2016-03-24T02:54:00.000Z" itemprop="datePublished">2016-03-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/24/uitextfield_placeholder_color/">UITextfield placeholder color</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="keyword">void</span>) drawPlaceholderInRect:(<span class="built_in">CGRect</span>)rect &#123;</span><br><span class="line">    [[<span class="built_in">UIColor</span> blueColor] setFill];</span><br><span class="line">    [<span class="keyword">self</span>.placeholder drawInRect:rect </span><br><span class="line">						withFont:<span class="keyword">self</span>.font </span><br><span class="line">				   lineBreakMode:<span class="built_in">UILineBreakModeTailTruncation</span> </span><br><span class="line">						alignment:<span class="keyword">self</span>.textAlignment];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/03/24/uitextfield_placeholder_color/" data-id="cio04tkun0012lk6u3s4brtql" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/objc/">objc</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-AXIsProcessTrustedWithOptions" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/03/24/AXIsProcessTrustedWithOptions/" class="article-date">
+  <time datetime="2016-03-24T02:54:00.000Z" itemprop="datePublished">2016-03-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/24/AXIsProcessTrustedWithOptions/">AXIsProcessTrustedWithOptions</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSDictionary</span> *options = @&#123;(<span class="keyword">id</span>)kAXTrustedCheckOptionPrompt: @YES&#125;;</span><br><span class="line"><span class="built_in">BOOL</span> accessibilityEnabled =</span><br><span class="line"> AXIsProcessTrustedWithOptions((<span class="built_in">CFDictionaryRef</span>)options);</span><br></pre></td></tr></table></figure>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> options:[<span class="type">NSString</span>:<span class="type">NSNumber</span>] = </span><br><span class="line">[<span class="type">String</span>(kAXTrustedCheckOptionPrompt.takeRetainedValue()) <span class="keyword">as</span> <span class="type">String</span>:<span class="literal">true</span>]</span><br><span class="line"><span class="keyword">let</span> accessibilityEnabled = <span class="type">AXIsProcessTrustedWithOptions</span>(options);</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/03/24/AXIsProcessTrustedWithOptions/" data-id="cio04tkt10003lk6uyc89clyu" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/osx/">osx</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-CIFilter" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/03/24/CIFilter/" class="article-date">
+  <time datetime="2016-03-24T02:54:00.000Z" itemprop="datePublished">2016-03-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/24/CIFilter/">CIFilter</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">+(void) adjustImage:(<span class="type">UIImage</span> *) image container:(<span class="type">UIImageView</span> *) iv&#123;</span><br><span class="line">    <span class="type">NSLog</span>(@<span class="string">"7"</span>);</span><br><span class="line">    <span class="type">CIImage</span> *beginImage = [<span class="type">CIImage</span> imageWithCGImage:image.<span class="type">CGImage</span>];</span><br><span class="line">    <span class="type">CIFilter</span> * <span class="built_in">filter</span> = [<span class="type">CIFilter</span> filterWithName:@<span class="string">"CIColorControls"</span>];</span><br><span class="line">    [<span class="built_in">filter</span> setValue:beginImage forKey:kCIInputImageKey];</span><br><span class="line">    </span><br><span class="line">    <span class="type">NSUserDefaults</span> *ud = [<span class="type">NSUserDefaults</span> standardUserDefaults];</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//  亮度  10   -1---1</span></span><br><span class="line">    float lightPercent = [[ud objectForKey:@<span class="string">"Light"</span>] floatValue];</span><br><span class="line">    float lightValue =  -<span class="number">1</span> + <span class="number">2</span>*lightPercent;</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    <span class="comment">//  对比度 -11  0---4</span></span><br><span class="line">    float contrastPercent = [[ud objectForKey:@<span class="string">"Contrast"</span>] floatValue];</span><br><span class="line">    float contrastValue =  <span class="number">0</span> + <span class="number">4</span>*contrastPercent;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//  饱和度      0---2</span></span><br><span class="line">    float bhdPercent = [[ud objectForKey:@<span class="string">"Temp"</span>] floatValue];</span><br><span class="line">    float bhdValue =  <span class="number">0</span> + <span class="number">2</span>*bhdPercent;</span><br><span class="line">    </span><br><span class="line">    [<span class="built_in">filter</span> setValue:@(lightValue) forKey:@<span class="string">"inputBrightness"</span>];</span><br><span class="line">    [<span class="built_in">filter</span> setValue:@(contrastValue)forKey:@<span class="string">"inputContrast"</span>];</span><br><span class="line">    [<span class="built_in">filter</span> setValue:@(bhdValue) forKey:@<span class="string">"inputSaturation"</span>];</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 得到过滤后的图片</span></span><br><span class="line">    <span class="type">CIImage</span> *outputImage = [<span class="built_in">filter</span> outputImage];</span><br><span class="line"><span class="comment">//    // 转换图片, 创建基于GPU的CIContext对象</span></span><br><span class="line"><span class="comment">//    CIContext *context = [CIContext contextWithOptions: nil];</span></span><br><span class="line"><span class="comment">//    CGImageRef cgimg = [context createCGImage:outputImage fromRect:[outputImage extent]];</span></span><br><span class="line">    <span class="type">UIImage</span> *newImg = [<span class="type">UIImage</span> imageWithCIImage:outputImage];</span><br><span class="line"><span class="comment">//    // 显示图片</span></span><br><span class="line">    [iv setImage:newImg];</span><br><span class="line"><span class="comment">//    // 释放C对象</span></span><br><span class="line"><span class="comment">//    CGImageRelease(cgimg);</span></span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/03/24/CIFilter/" data-id="cio04tkst0001lk6u0ydia4n9" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ios/">ios</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/swift/">swift</a></li></ul>
 
     </footer>
   </div>
@@ -332,7 +332,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/22/nsalert/" data-id="cio04phlh0011km6u56dmsswa" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/03/22/nsalert/" data-id="cio04tkuc000vlk6uwj5pgof1" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cocoa/">cocoa</a></li></ul>
@@ -378,7 +378,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/22/ios_appdelegate_lifecycle/" data-id="cio04phk4000ckm6u52zsoqmv" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/03/22/ios_appdelegate_lifecycle/" data-id="cio04tktu000glk6uf7r5dbtg" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ios/">ios</a></li></ul>
@@ -417,7 +417,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/22/image_data_from_nsdata/" data-id="cio04phjy000akm6ux9jvd4bl" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/03/22/image_data_from_nsdata/" data-id="cio04tktq000elk6ud937a7uy" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/objc/">objc</a></li></ul>
@@ -489,11 +489,11 @@
           </li>
         
           <li>
-            <a href="/2016/05/09/swift_string_2_object/">swift 通过 string 创建 object</a>
+            <a href="/2016/05/09/NSEventModifierFlags/">swift NSEventModifierFlags &#39;&amp;&#39; &#39;|&#39; 操作</a>
           </li>
         
           <li>
-            <a href="/2016/05/09/NSEventModifierFlags/">swift NSEventModifierFlags &#39;&amp;&#39; &#39;|&#39; 操作</a>
+            <a href="/2016/05/09/swift_string_2_object/">swift 通过 string 创建 object</a>
           </li>
         
       </ul>
