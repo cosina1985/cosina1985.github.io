@@ -3,18 +3,18 @@
 <head>
   <meta charset="utf-8">
   
-  <title>UITextfield placeholder color | 跑位一脚</title>
+  <title>UIView rotate Infinite | 跑位一脚</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1234567- (void) drawPlaceholderInRect:(CGRect)rect &amp;#123;    [[UIColor blueColor] setFill];    [self.placeholder drawInRect:rect 						withFont:self.font 				   lineBreakMode:UILineBreakModeTailTrunca">
+  <meta name="description" content="12345678910111213#import &amp;lt;QuartzCore/QuartzCore.h&amp;gt; - (void) spinAnimationOnView:(UIView*)view                       duration:(CGFloat)duration                      rotations:(CGFloat)rotations">
 <meta property="og:type" content="article">
-<meta property="og:title" content="UITextfield placeholder color">
-<meta property="og:url" content="http://yoursite.com/2016/03/24/uitextfield_placeholder_color/index.html">
+<meta property="og:title" content="UIView rotate Infinite">
+<meta property="og:url" content="http://yoursite.com/2016/03/25/ios_view_rotate/index.html">
 <meta property="og:site_name" content="跑位一脚">
-<meta property="og:description" content="1234567- (void) drawPlaceholderInRect:(CGRect)rect &amp;#123;    [[UIColor blueColor] setFill];    [self.placeholder drawInRect:rect 						withFont:self.font 				   lineBreakMode:UILineBreakModeTailTrunca">
-<meta property="og:updated_time" content="2016-05-09T05:16:16.000Z">
+<meta property="og:description" content="12345678910111213#import &amp;lt;QuartzCore/QuartzCore.h&amp;gt; - (void) spinAnimationOnView:(UIView*)view                       duration:(CGFloat)duration                      rotations:(CGFloat)rotations">
+<meta property="og:updated_time" content="2016-05-10T14:49:03.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="UITextfield placeholder color">
-<meta name="twitter:description" content="1234567- (void) drawPlaceholderInRect:(CGRect)rect &amp;#123;    [[UIColor blueColor] setFill];    [self.placeholder drawInRect:rect 						withFont:self.font 				   lineBreakMode:UILineBreakModeTailTrunca">
+<meta name="twitter:title" content="UIView rotate Infinite">
+<meta name="twitter:description" content="12345678910111213#import &amp;lt;QuartzCore/QuartzCore.h&amp;gt; - (void) spinAnimationOnView:(UIView*)view                       duration:(CGFloat)duration                      rotations:(CGFloat)rotations">
   
     <link rel="alternate" href="/atom.xml" title="跑位一脚" type="application/atom+xml">
   
@@ -63,10 +63,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-uitextfield_placeholder_color" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-ios_view_rotate" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/03/24/uitextfield_placeholder_color/" class="article-date">
-  <time datetime="2016-03-24T02:54:00.000Z" itemprop="datePublished">2016-03-24</time>
+    <a href="/2016/03/25/ios_view_rotate/" class="article-date">
+  <time datetime="2016-03-25T07:31:00.000Z" itemprop="datePublished">2016-03-25</time>
 </a>
     
   </div>
@@ -77,7 +77,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      UITextfield placeholder color
+      UIView rotate Infinite
     </h1>
   
 
@@ -85,15 +85,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="keyword">void</span>) drawPlaceholderInRect:(<span class="built_in">CGRect</span>)rect &#123;</span><br><span class="line">    [[<span class="built_in">UIColor</span> blueColor] setFill];</span><br><span class="line">    [<span class="keyword">self</span>.placeholder drawInRect:rect </span><br><span class="line">						withFont:<span class="keyword">self</span>.font </span><br><span class="line">				   lineBreakMode:<span class="built_in">UILineBreakModeTailTruncation</span> </span><br><span class="line">						alignment:<span class="keyword">self</span>.textAlignment];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#import <span class="meta-string">&lt;QuartzCore/QuartzCore.h&gt;</span> </span></span><br><span class="line">- (<span class="keyword">void</span>) spinAnimationOnView:(<span class="built_in">UIView</span>*)view</span><br><span class="line">                       duration:(<span class="built_in">CGFloat</span>)duration</span><br><span class="line">                      rotations:(<span class="built_in">CGFloat</span>)rotations</span><br><span class="line">                         repeat:(<span class="keyword">float</span>)repeat; &#123;</span><br><span class="line">    <span class="built_in">CABasicAnimation</span> *animation;</span><br><span class="line">    animation = [<span class="built_in">CABasicAnimation</span> animationWithKeyPath:<span class="string">@"transform.rotation.z"</span>];</span><br><span class="line">    animation.toValue = [<span class="built_in">NSNumber</span> numberWithFloat: M_PI * <span class="number">2.0</span> * rotations * duration ];</span><br><span class="line">    animation.duration = duration;</span><br><span class="line">    animation.cumulative = <span class="literal">YES</span>;</span><br><span class="line">    animation.repeatCount = repeat;</span><br><span class="line">    [view.layer addAnimation:animation forKey:<span class="string">@"rotationAnimation"</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/24/uitextfield_placeholder_color/" data-id="cio1k1pb2001d3x6ukojv7ub9" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/03/25/ios_view_rotate/" data-id="cio1k1p9z000t3x6udegfs4gh" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/objc/">objc</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ios/">ios</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/objc/">objc</a></li></ul>
 
     </footer>
   </div>
@@ -101,19 +101,19 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/03/24/ios_url_rate_download/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/04/08/ios_camera_authorization/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          ios appstore 下载链接 评价链接
+          AVAuthorizationStatus Camera
         
       </div>
     </a>
   
   
-    <a href="/2016/03/22/nsalert/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2016/03/25/swift_2.2_changelog/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">NSAlert</div>
+      <div class="article-nav-title">Swift 2.2 changelog</div>
     </a>
   
 </nav>

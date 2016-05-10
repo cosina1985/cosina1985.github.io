@@ -53,7 +53,7 @@
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="搜尋"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -93,127 +93,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/09/objc_load_initialize/" data-id="cio04xsys000xmz6ui71l0c48" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/09/objc_load_initialize/" data-id="cio1k1pau00193x6uregjnpjt" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/objc/">objc</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-KVO_options" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/05/09/KVO_options/" class="article-date">
-  <time datetime="2016-05-09T02:55:37.000Z" itemprop="datePublished">2016-05-09</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/09/KVO_options/">KVO 几个options</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSKeyValueObservingOptions</span>.New   新值</span><br><span class="line"><span class="built_in">NSKeyValueObservingOptions</span>.Old    旧值</span><br><span class="line"><span class="built_in">NSKeyValueObservingOptions</span>.Initial 注册监听的时候会立即发送</span><br><span class="line"><span class="built_in">NSKeyValueObservingOptions</span>.Prior  更改之前会额外发送一次</span><br><span class="line"> </span><br><span class="line">只有 <span class="built_in">NSKeyValueObservingOptions</span>.New </span><br><span class="line">和 <span class="built_in">NSKeyValueObservingOptions</span>.Old   </span><br><span class="line">会存在于 observeValueForKeyPath 方法的change dictionary中</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/09/KVO_options/" data-id="cio04xsxl0009mz6uaufwrvtj" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/objc/">objc</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-NSEventModifierFlags" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/05/09/NSEventModifierFlags/" class="article-date">
-  <time datetime="2016-05-09T02:55:37.000Z" itemprop="datePublished">2016-05-09</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/09/NSEventModifierFlags/">swift NSEventModifierFlags &#39;&amp;&#39; &#39;|&#39; 操作</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> flags = <span class="type">NSEventModifierFlags</span>(rawValue: <span class="type">NSEventModifierFlags</span>.<span class="type">NumericPadKeyMask</span>.rawValue | <span class="type">NSEventModifierFlags</span>.<span class="type">NumericPadKeyMask</span>.rawValue)</span><br><span class="line">      <span class="keyword">if</span> flags.<span class="built_in">contains</span>(<span class="type">NSEventModifierFlags</span>.<span class="type">NumericPadKeyMask</span>) &#123;</span><br><span class="line"> </span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/09/NSEventModifierFlags/" data-id="cio04xsxp000bmz6ubl1v5iry" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/swift/">swift</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-swift_string_2_object" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/05/09/swift_string_2_object/" class="article-date">
-  <time datetime="2016-05-09T02:55:37.000Z" itemprop="datePublished">2016-05-09</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/09/swift_string_2_object/">swift 通过 string 创建 object</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">IndexViewController</span>: <span class="title">UIViewController</span></span>&#123;&#125;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">let</span> className = <span class="string">"IndexViewController"</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">let</span> bundlePath = <span class="type">NSBundle</span>.mainBundle().bundlePath</span><br><span class="line"><span class="keyword">let</span> bundleFullName = bundlePath.componentsSeparatedByString(<span class="string">"/"</span>).last</span><br><span class="line"><span class="keyword">let</span> bundleName = bundleFullName?.componentsSeparatedByString(<span class="string">"."</span>).first</span><br><span class="line"><span class="keyword">let</span> clazz = <span class="type">NSClassFromString</span>(bundleName! + <span class="string">"."</span> + className)! <span class="keyword">as</span>! <span class="type">UIViewController</span>.<span class="type">Type</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">let</span> object = clazz.<span class="keyword">init</span>()</span><br><span class="line"><span class="comment">// let object1 = Index() 普通方法</span></span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/09/swift_string_2_object/" data-id="cio04xszd0013mz6u44pr3x7b" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/swift/">swift</a></li></ul>
 
     </footer>
   </div>
@@ -249,10 +132,212 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/09/CWInterface/" data-id="cio04xsyh000qmz6u28aatj06" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/09/CWInterface/" data-id="cio1k1p8100003x6u4si43ih8" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/objc/">objc</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-swift_string_2_object" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/09/swift_string_2_object/" class="article-date">
+  <time datetime="2016-05-09T02:55:37.000Z" itemprop="datePublished">2016-05-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/09/swift_string_2_object/">swift 通过 string 创建 object</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">IndexViewController</span>: <span class="title">UIViewController</span></span>&#123;&#125;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">let</span> className = <span class="string">"IndexViewController"</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">let</span> bundlePath = <span class="type">NSBundle</span>.mainBundle().bundlePath</span><br><span class="line"><span class="keyword">let</span> bundleFullName = bundlePath.componentsSeparatedByString(<span class="string">"/"</span>).last</span><br><span class="line"><span class="keyword">let</span> bundleName = bundleFullName?.componentsSeparatedByString(<span class="string">"."</span>).first</span><br><span class="line"><span class="keyword">let</span> clazz = <span class="type">NSClassFromString</span>(bundleName! + <span class="string">"."</span> + className)! <span class="keyword">as</span>! <span class="type">UIViewController</span>.<span class="type">Type</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">let</span> object = clazz.<span class="keyword">init</span>()</span><br><span class="line"><span class="comment">// let object1 = Index() 普通方法</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/05/09/swift_string_2_object/" data-id="cio1k1pay001b3x6uki9ntrne" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/swift/">swift</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-KVO_options" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/09/KVO_options/" class="article-date">
+  <time datetime="2016-05-09T02:55:37.000Z" itemprop="datePublished">2016-05-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/09/KVO_options/">KVO 几个options</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSKeyValueObservingOptions</span>.New   新值</span><br><span class="line"><span class="built_in">NSKeyValueObservingOptions</span>.Old    旧值</span><br><span class="line"><span class="built_in">NSKeyValueObservingOptions</span>.Initial 注册监听的时候会立即发送</span><br><span class="line"><span class="built_in">NSKeyValueObservingOptions</span>.Prior  更改之前会额外发送一次</span><br><span class="line"> </span><br><span class="line">只有 <span class="built_in">NSKeyValueObservingOptions</span>.New </span><br><span class="line">和 <span class="built_in">NSKeyValueObservingOptions</span>.Old   </span><br><span class="line">会存在于 observeValueForKeyPath 方法的change dictionary中</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/05/09/KVO_options/" data-id="cio1k1p8r00063x6ulnr6xhfa" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/objc/">objc</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-svn_ignore" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/09/svn_ignore/" class="article-date">
+  <time datetime="2016-05-09T02:55:37.000Z" itemprop="datePublished">2016-05-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/09/svn_ignore/">svn ignore files</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <ul>
+<li><p><strong>.xcuserstate</strong></p>
+</li>
+<li><p><strong>Xcode</strong><br><em>.pbxuser
+</em>.mode1v3<br><em>.mode2v3
+</em>.perspectivev3<br>*.xcuserstate<br>project.xcworkspace/<br>xcuserdata/</p>
+</li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/05/09/svn_ignore/" data-id="cio1k1pam00123x6uo82n71ld" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/svn/">svn</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-NSEventModifierFlags" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/09/NSEventModifierFlags/" class="article-date">
+  <time datetime="2016-05-09T02:55:37.000Z" itemprop="datePublished">2016-05-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/09/NSEventModifierFlags/">swift NSEventModifierFlags &#39;&amp;&#39; &#39;|&#39; 操作</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> flags = <span class="type">NSEventModifierFlags</span>(rawValue: <span class="type">NSEventModifierFlags</span>.<span class="type">NumericPadKeyMask</span>.rawValue | <span class="type">NSEventModifierFlags</span>.<span class="type">NumericPadKeyMask</span>.rawValue)</span><br><span class="line">      <span class="keyword">if</span> flags.<span class="built_in">contains</span>(<span class="type">NSEventModifierFlags</span>.<span class="type">NumericPadKeyMask</span>) &#123;</span><br><span class="line"> </span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/05/09/NSEventModifierFlags/" data-id="cio1k1p91000a3x6u00zt0xmx" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/swift/">swift</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-nssound" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/09/nssound/" class="article-date">
+  <time datetime="2016-05-09T02:55:37.000Z" itemprop="datePublished">2016-05-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/09/nssound/">cocoa播放音频</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSString</span> *resourcePath = [[<span class="built_in">NSBundle</span> mainBundle] pathForResource:<span class="string">@"alert"</span> ofType:<span class="string">@"wav"</span>];</span><br><span class="line">_sound = [[<span class="built_in">NSSound</span> alloc] initWithContentsOfFile:resourcePath byReference:<span class="literal">YES</span>];</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/05/09/nssound/" data-id="cio1k1pa2000w3x6u08zg5td4" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/objc/">objc</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/osx/">osx</a></li></ul>
 
     </footer>
   </div>
@@ -294,7 +379,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/09/layer_backed/" data-id="cio04xsyo000vmz6uym3x15hl" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/09/layer_backed/" data-id="cio1k1paj00103x6uhsmyha9w" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cocoa/">cocoa</a></li></ul>
@@ -334,7 +419,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/04/09/bash_history/" data-id="cio04xsxv000fmz6uj1gr4zgj" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/04/09/bash_history/" data-id="cio1k1p9i000h3x6ugr1eimwr" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bash/">bash</a></li></ul>
@@ -373,7 +458,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/04/08/nsevent_global_monitor/" data-id="cio04xsyl000tmz6uf0hyas9x" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/04/08/nsevent_global_monitor/" data-id="cio1k1pa8000y3x6u5eqe5to6" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/osx/">osx</a></li></ul>
@@ -385,100 +470,10 @@
 
 
   
-    <article id="post-ios_camera_authorization" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/04/08/ios_camera_authorization/" class="article-date">
-  <time datetime="2016-04-08T10:26:00.000Z" itemprop="datePublished">2016-04-08</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/04/08/ios_camera_authorization/">AVAuthorizationStatus Camera</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">- (IBAction)goToCamera&#123;</span><br><span class="line">    AVAuthorizationStatus authStatus = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];</span><br><span class="line">    if(authStatus == AVAuthorizationStatusAuthorized)&#123;</span><br><span class="line">        [self popCamera];</span><br><span class="line">    &#125; else if(authStatus == AVAuthorizationStatusNotDetermined) &#123;</span><br><span class="line">        NSLog(@"%@", @"Camera access not determined. Ask for permission.");</span><br><span class="line">        [AVCaptureDevice requestAccessForMediaType:AVMediaTypeVideo </span><br><span class="line">        completionHandler:^(BOOL granted)&#123;</span><br><span class="line">            if(granted) &#123;</span><br><span class="line">                NSLog(@"Granted access to %@", AVMediaTypeVideo);</span><br><span class="line">                [self popCamera];</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">                NSLog(@"Not granted access to %@", AVMediaTypeVideo);</span><br><span class="line">                [self camDenied];</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;];</span><br><span class="line">    &#125; else if (authStatus == AVAuthorizationStatusRestricted) &#123;</span><br><span class="line">        // My own Helper class is used here to pop a dialog in one simple line.</span><br><span class="line">        [Helper popAlertMessageWithTitle:@"Error" </span><br><span class="line">        alertText:@"You've been restricted from using the camera on this device. </span><br><span class="line">        Without camera access this feature won't work. Please </span><br><span class="line">        contact the device owner so they can give you access."];</span><br><span class="line">    &#125; else &#123;</span><br><span class="line">        [self camDenied];</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/04/08/ios_camera_authorization/" data-id="cio04xsyb000mmz6um1o8q1pa" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ios/">ios</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-swift_2.2_changelog" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/03/25/swift_2.2_changelog/" class="article-date">
-  <time datetime="2016-03-25T07:31:00.000Z" itemprop="datePublished">2016-03-25</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/25/swift_2.2_changelog/">Swift 2.2 changelog</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <ul>
-<li>++ and – are deprecated</li>
-<li>Traditional C-style for loops are deprecated</li>
-<li>Arrays and other slice types now have removeFirst()</li>
-<li>You can now compare tuples</li>
-<li>Tuple splat syntax is deprecated</li>
-<li>More keywords can be used as argument labels</li>
-<li>var parameters have been deprecated</li>
-<li>Renamed debug identifiers: #line, #function, #file</li>
-<li>Stringified selectors are deprecated</li>
-<li>Compile-time Swift version checking </li>
-</ul>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">#<span class="keyword">if</span> swift(&gt;=<span class="number">2.2</span>)</span><br><span class="line">	<span class="built_in">print</span>(<span class="string">"Running Swift 2.2 or later"</span>)</span><br><span class="line">#<span class="keyword">else</span></span><br><span class="line">	<span class="built_in">print</span>(<span class="string">"Running Swift 2.1 or earlier"</span>)</span><br><span class="line">#endif</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/25/swift_2.2_changelog/" data-id="cio04xsyz000zmz6ubh7yr74r" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/swift/">swift</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
 
 
   <nav id="page-nav">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/">__('next') &raquo;</a>
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/">__('next') &raquo;</a>
   </nav>
 </section>
         
@@ -489,9 +484,9 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
+    <h3 class="widget-title">標籤</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/bash/">bash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cocoa/">cocoa</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ios/">ios</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/objc/">objc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/osx/">osx</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/swift/">swift</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/bash/">bash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cocoa/">cocoa</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ios/">ios</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/objc/">objc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/osx/">osx</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/svn/">svn</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/swift/">swift</a></li></ul>
     </div>
   </div>
 
@@ -499,16 +494,16 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
+    <h3 class="widget-title">標籤雲</h3>
     <div class="widget tagcloud">
-      <a href="/tags/bash/" style="font-size: 10px;">bash</a> <a href="/tags/cocoa/" style="font-size: 13.33px;">cocoa</a> <a href="/tags/ios/" style="font-size: 13.33px;">ios</a> <a href="/tags/objc/" style="font-size: 20px;">objc</a> <a href="/tags/osx/" style="font-size: 13.33px;">osx</a> <a href="/tags/swift/" style="font-size: 16.67px;">swift</a>
+      <a href="/tags/bash/" style="font-size: 10px;">bash</a> <a href="/tags/cocoa/" style="font-size: 12.5px;">cocoa</a> <a href="/tags/ios/" style="font-size: 17.5px;">ios</a> <a href="/tags/objc/" style="font-size: 20px;">objc</a> <a href="/tags/osx/" style="font-size: 15px;">osx</a> <a href="/tags/svn/" style="font-size: 10px;">svn</a> <a href="/tags/swift/" style="font-size: 15px;">swift</a>
     </div>
   </div>
 
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
+    <h3 class="widget-title">彙整</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a></li></ul>
     </div>
@@ -518,7 +513,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">最新文章</h3>
     <div class="widget">
       <ul>
         
@@ -527,11 +522,7 @@
           </li>
         
           <li>
-            <a href="/2016/05/09/KVO_options/">KVO 几个options</a>
-          </li>
-        
-          <li>
-            <a href="/2016/05/09/NSEventModifierFlags/">swift NSEventModifierFlags &#39;&amp;&#39; &#39;|&#39; 操作</a>
+            <a href="/2016/05/09/CWInterface/">cocoa 查看无线是否打开 可链接的wifi列表</a>
           </li>
         
           <li>
@@ -539,7 +530,11 @@
           </li>
         
           <li>
-            <a href="/2016/05/09/CWInterface/">cocoa 查看无线是否打开 可链接的wifi列表</a>
+            <a href="/2016/05/09/KVO_options/">KVO 几个options</a>
+          </li>
+        
+          <li>
+            <a href="/2016/05/09/svn_ignore/">svn ignore files</a>
           </li>
         
       </ul>
