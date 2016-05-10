@@ -53,7 +53,7 @@
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="搜尋"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -63,6 +63,45 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-nsevent_global_monitor" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/04/08/nsevent_global_monitor/" class="article-date">
+  <time datetime="2016-04-08T10:54:00.000Z" itemprop="datePublished">2016-04-08</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/04/08/nsevent_global_monitor/">监听全局事件</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">[<span class="built_in">NSEvent</span> addGlobalMonitorForEventsMatchingMask:<span class="built_in">NSKeyUpMask</span> </span><br><span class="line">	handler:^(<span class="built_in">NSEvent</span> * _Nonnull event) &#123;</span><br><span class="line">        [<span class="keyword">self</span> handleEvent:event];</span><br><span class="line">    &#125;];</span><br><span class="line">    </span><br><span class="line">-(<span class="built_in">BOOL</span>) handleEvent:(<span class="built_in">NSEvent</span> *) event&#123;</span><br><span class="line"><span class="keyword">const</span> <span class="built_in">NSUInteger</span> kNotAlt = <span class="built_in">NSAlternateKeyMask</span> | <span class="built_in">NSShiftKeyMask</span> | <span class="built_in">NSCommandKeyMask</span>;</span><br><span class="line">	<span class="keyword">if</span> ((event.modifierFlags &amp; <span class="built_in">NSControlKeyMask</span>) != <span class="number">0</span></span><br><span class="line">	   &amp;&amp;</span><br><span class="line">	   ((event.modifierFlags &amp; kNotAlt) == <span class="number">0</span>)</span><br><span class="line">	   &amp;&amp;</span><br><span class="line">	   [event.charactersIgnoringModifiers isEqualToString:<span class="string">@"x"</span>]) &#123;</span><br><span class="line">		.....</span><br><span class="line">		</span><br><span class="line">		<span class="comment">// 激活app</span></span><br><span class="line">	   [<span class="built_in">NSApp</span> activateIgnoringOtherApps:<span class="literal">YES</span>];</span><br><span class="line">	   <span class="keyword">return</span> <span class="literal">YES</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">NO</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/04/08/nsevent_global_monitor/" data-id="cio1k6p7z000y596uqhfn9xih" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/osx/">osx</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-ios_camera_authorization" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -91,49 +130,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/04/08/ios_camera_authorization/" data-id="cio1k1p9s000o3x6u58crfc1t" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/04/08/ios_camera_authorization/" data-id="cio1k6p6z000j596urujnfmpi" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ios/">ios</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-ios_view_rotate" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/03/25/ios_view_rotate/" class="article-date">
-  <time datetime="2016-03-25T07:31:00.000Z" itemprop="datePublished">2016-03-25</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/25/ios_view_rotate/">UIView rotate Infinite</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#import <span class="meta-string">&lt;QuartzCore/QuartzCore.h&gt;</span> </span></span><br><span class="line">- (<span class="keyword">void</span>) spinAnimationOnView:(<span class="built_in">UIView</span>*)view</span><br><span class="line">                       duration:(<span class="built_in">CGFloat</span>)duration</span><br><span class="line">                      rotations:(<span class="built_in">CGFloat</span>)rotations</span><br><span class="line">                         repeat:(<span class="keyword">float</span>)repeat; &#123;</span><br><span class="line">    <span class="built_in">CABasicAnimation</span> *animation;</span><br><span class="line">    animation = [<span class="built_in">CABasicAnimation</span> animationWithKeyPath:<span class="string">@"transform.rotation.z"</span>];</span><br><span class="line">    animation.toValue = [<span class="built_in">NSNumber</span> numberWithFloat: M_PI * <span class="number">2.0</span> * rotations * duration ];</span><br><span class="line">    animation.duration = duration;</span><br><span class="line">    animation.cumulative = <span class="literal">YES</span>;</span><br><span class="line">    animation.repeatCount = repeat;</span><br><span class="line">    [view.layer addAnimation:animation forKey:<span class="string">@"rotationAnimation"</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/25/ios_view_rotate/" data-id="cio1k1p9z000t3x6udegfs4gh" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ios/">ios</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/objc/">objc</a></li></ul>
 
     </footer>
   </div>
@@ -181,7 +181,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/25/swift_2.2_changelog/" data-id="cio1k1pap00143x6u7cx2p2an" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/03/25/swift_2.2_changelog/" data-id="cio1k6p8i0018596u9vuolfsh" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/swift/">swift</a></li></ul>
@@ -193,10 +193,10 @@
 
 
   
-    <article id="post-fieldeditor" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-ios_view_rotate" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/03/24/fieldeditor/" class="article-date">
-  <time datetime="2016-03-24T02:54:00.000Z" itemprop="datePublished">2016-03-24</time>
+    <a href="/2016/03/25/ios_view_rotate/" class="article-date">
+  <time datetime="2016-03-25T07:31:00.000Z" itemprop="datePublished">2016-03-25</time>
 </a>
     
   </div>
@@ -207,7 +207,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/24/fieldeditor/">fieldeditor</a>
+      <a class="article-title" href="/2016/03/25/ios_view_rotate/">UIView rotate Infinite</a>
     </h1>
   
 
@@ -215,15 +215,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>TextField 焦点从f0-&gt;f1 切换<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">FieldEditor1 resignFirstResponder</span><br><span class="line">FieldEditor1 resignFirstResponder</span><br><span class="line">TextField-f1 becomeFirstResponder</span><br><span class="line">TextField-f1 resignFirstResponder</span><br><span class="line">FieldEditor1 becomeFirstResponder</span><br></pre></td></tr></table></figure></p>
+        <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#import <span class="meta-string">&lt;QuartzCore/QuartzCore.h&gt;</span> </span></span><br><span class="line">- (<span class="keyword">void</span>) spinAnimationOnView:(<span class="built_in">UIView</span>*)view</span><br><span class="line">                       duration:(<span class="built_in">CGFloat</span>)duration</span><br><span class="line">                      rotations:(<span class="built_in">CGFloat</span>)rotations</span><br><span class="line">                         repeat:(<span class="keyword">float</span>)repeat; &#123;</span><br><span class="line">    <span class="built_in">CABasicAnimation</span> *animation;</span><br><span class="line">    animation = [<span class="built_in">CABasicAnimation</span> animationWithKeyPath:<span class="string">@"transform.rotation.z"</span>];</span><br><span class="line">    animation.toValue = [<span class="built_in">NSNumber</span> numberWithFloat: M_PI * <span class="number">2.0</span> * rotations * duration ];</span><br><span class="line">    animation.duration = duration;</span><br><span class="line">    animation.cumulative = <span class="literal">YES</span>;</span><br><span class="line">    animation.repeatCount = repeat;</span><br><span class="line">    [view.layer addAnimation:animation forKey:<span class="string">@"rotationAnimation"</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/24/fieldeditor/" data-id="cio1k1p99000d3x6u8sk6w84s" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/03/25/ios_view_rotate/" data-id="cio1k6p7l000q596uirc3ghd7" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cocoa/">cocoa</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ios/">ios</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/objc/">objc</a></li></ul>
 
     </footer>
   </div>
@@ -259,7 +259,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/24/ios_save_screen/" data-id="cio1k1p9p000m3x6uovet1i63" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/03/24/ios_save_screen/" data-id="cio1k6p74000l596upgvpn3lx" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ios/">ios</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/objc/">objc</a></li></ul>
@@ -299,7 +299,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/24/AXIsProcessTrustedWithOptions/" data-id="cio1k1p8k00033x6ubbjhqsnn" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/03/24/AXIsProcessTrustedWithOptions/" data-id="cio1k6p5i0000596ufa0dn4hf" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/osx/">osx</a></li></ul>
@@ -344,49 +344,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/24/core_graphics/" data-id="cio1k1p8o00043x6u8res120p" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/03/24/core_graphics/" data-id="cio1k6p6c0009596u1dbm64t8" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/objc/">objc</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-CIFilter" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/03/24/CIFilter/" class="article-date">
-  <time datetime="2016-03-24T02:54:00.000Z" itemprop="datePublished">2016-03-24</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/24/CIFilter/">CIFilter</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">+(void) adjustImage:(<span class="type">UIImage</span> *) image container:(<span class="type">UIImageView</span> *) iv&#123;</span><br><span class="line">    <span class="type">NSLog</span>(@<span class="string">"7"</span>);</span><br><span class="line">    <span class="type">CIImage</span> *beginImage = [<span class="type">CIImage</span> imageWithCGImage:image.<span class="type">CGImage</span>];</span><br><span class="line">    <span class="type">CIFilter</span> * <span class="built_in">filter</span> = [<span class="type">CIFilter</span> filterWithName:@<span class="string">"CIColorControls"</span>];</span><br><span class="line">    [<span class="built_in">filter</span> setValue:beginImage forKey:kCIInputImageKey];</span><br><span class="line">    </span><br><span class="line">    <span class="type">NSUserDefaults</span> *ud = [<span class="type">NSUserDefaults</span> standardUserDefaults];</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//  亮度  10   -1---1</span></span><br><span class="line">    float lightPercent = [[ud objectForKey:@<span class="string">"Light"</span>] floatValue];</span><br><span class="line">    float lightValue =  -<span class="number">1</span> + <span class="number">2</span>*lightPercent;</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    <span class="comment">//  对比度 -11  0---4</span></span><br><span class="line">    float contrastPercent = [[ud objectForKey:@<span class="string">"Contrast"</span>] floatValue];</span><br><span class="line">    float contrastValue =  <span class="number">0</span> + <span class="number">4</span>*contrastPercent;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//  饱和度      0---2</span></span><br><span class="line">    float bhdPercent = [[ud objectForKey:@<span class="string">"Temp"</span>] floatValue];</span><br><span class="line">    float bhdValue =  <span class="number">0</span> + <span class="number">2</span>*bhdPercent;</span><br><span class="line">    </span><br><span class="line">    [<span class="built_in">filter</span> setValue:@(lightValue) forKey:@<span class="string">"inputBrightness"</span>];</span><br><span class="line">    [<span class="built_in">filter</span> setValue:@(contrastValue)forKey:@<span class="string">"inputContrast"</span>];</span><br><span class="line">    [<span class="built_in">filter</span> setValue:@(bhdValue) forKey:@<span class="string">"inputSaturation"</span>];</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 得到过滤后的图片</span></span><br><span class="line">    <span class="type">CIImage</span> *outputImage = [<span class="built_in">filter</span> outputImage];</span><br><span class="line"><span class="comment">//    // 转换图片, 创建基于GPU的CIContext对象</span></span><br><span class="line"><span class="comment">//    CIContext *context = [CIContext contextWithOptions: nil];</span></span><br><span class="line"><span class="comment">//    CGImageRef cgimg = [context createCGImage:outputImage fromRect:[outputImage extent]];</span></span><br><span class="line">    <span class="type">UIImage</span> *newImg = [<span class="type">UIImage</span> imageWithCIImage:outputImage];</span><br><span class="line"><span class="comment">//    // 显示图片</span></span><br><span class="line">    [iv setImage:newImg];</span><br><span class="line"><span class="comment">//    // 释放C对象</span></span><br><span class="line"><span class="comment">//    CGImageRelease(cgimg);</span></span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/24/CIFilter/" data-id="cio1k1p8900013x6ueil78oty" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ios/">ios</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/swift/">swift</a></li></ul>
 
     </footer>
   </div>
@@ -422,10 +383,49 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/24/disable_nap/" data-id="cio1k1p8x00083x6upgr629l2" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/03/24/disable_nap/" data-id="cio1k6p6h000b596uq3shco3c" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/objc/">objc</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/osx/">osx</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-CIFilter" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/03/24/CIFilter/" class="article-date">
+  <time datetime="2016-03-24T02:54:00.000Z" itemprop="datePublished">2016-03-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/24/CIFilter/">CIFilter</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">+(void) adjustImage:(<span class="type">UIImage</span> *) image container:(<span class="type">UIImageView</span> *) iv&#123;</span><br><span class="line">    <span class="type">NSLog</span>(@<span class="string">"7"</span>);</span><br><span class="line">    <span class="type">CIImage</span> *beginImage = [<span class="type">CIImage</span> imageWithCGImage:image.<span class="type">CGImage</span>];</span><br><span class="line">    <span class="type">CIFilter</span> * <span class="built_in">filter</span> = [<span class="type">CIFilter</span> filterWithName:@<span class="string">"CIColorControls"</span>];</span><br><span class="line">    [<span class="built_in">filter</span> setValue:beginImage forKey:kCIInputImageKey];</span><br><span class="line">    </span><br><span class="line">    <span class="type">NSUserDefaults</span> *ud = [<span class="type">NSUserDefaults</span> standardUserDefaults];</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//  亮度  10   -1---1</span></span><br><span class="line">    float lightPercent = [[ud objectForKey:@<span class="string">"Light"</span>] floatValue];</span><br><span class="line">    float lightValue =  -<span class="number">1</span> + <span class="number">2</span>*lightPercent;</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    <span class="comment">//  对比度 -11  0---4</span></span><br><span class="line">    float contrastPercent = [[ud objectForKey:@<span class="string">"Contrast"</span>] floatValue];</span><br><span class="line">    float contrastValue =  <span class="number">0</span> + <span class="number">4</span>*contrastPercent;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//  饱和度      0---2</span></span><br><span class="line">    float bhdPercent = [[ud objectForKey:@<span class="string">"Temp"</span>] floatValue];</span><br><span class="line">    float bhdValue =  <span class="number">0</span> + <span class="number">2</span>*bhdPercent;</span><br><span class="line">    </span><br><span class="line">    [<span class="built_in">filter</span> setValue:@(lightValue) forKey:@<span class="string">"inputBrightness"</span>];</span><br><span class="line">    [<span class="built_in">filter</span> setValue:@(contrastValue)forKey:@<span class="string">"inputContrast"</span>];</span><br><span class="line">    [<span class="built_in">filter</span> setValue:@(bhdValue) forKey:@<span class="string">"inputSaturation"</span>];</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 得到过滤后的图片</span></span><br><span class="line">    <span class="type">CIImage</span> *outputImage = [<span class="built_in">filter</span> outputImage];</span><br><span class="line"><span class="comment">//    // 转换图片, 创建基于GPU的CIContext对象</span></span><br><span class="line"><span class="comment">//    CIContext *context = [CIContext contextWithOptions: nil];</span></span><br><span class="line"><span class="comment">//    CGImageRef cgimg = [context createCGImage:outputImage fromRect:[outputImage extent]];</span></span><br><span class="line">    <span class="type">UIImage</span> *newImg = [<span class="type">UIImage</span> imageWithCIImage:outputImage];</span><br><span class="line"><span class="comment">//    // 显示图片</span></span><br><span class="line">    [iv setImage:newImg];</span><br><span class="line"><span class="comment">//    // 释放C对象</span></span><br><span class="line"><span class="comment">//    CGImageRelease(cgimg);</span></span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/03/24/CIFilter/" data-id="cio1k6p5p0001596uecfxtvxh" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ios/">ios</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/swift/">swift</a></li></ul>
 
     </footer>
   </div>
@@ -462,7 +462,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/24/ios_url_rate_download/" data-id="cio1k1p9v000r3x6u4h1mdu7e" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/03/24/ios_url_rate_download/" data-id="cio1k6p7i000o596uypm1lh7g" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ios/">ios</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/objc/">objc</a></li></ul>
@@ -488,9 +488,9 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">標籤</h3>
+    <h3 class="widget-title">Tags</h3>
     <div class="widget">
-      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/bash/">bash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cocoa/">cocoa</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ios/">ios</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/objc/">objc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/osx/">osx</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/svn/">svn</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/swift/">swift</a></li></ul>
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/TextKit/">TextKit</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/bash/">bash</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/cocoa/">cocoa</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/ios/">ios</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/objc/">objc</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/osx/">osx</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/svn/">svn</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/swift/">swift</a></li></ul>
     </div>
   </div>
 
@@ -498,16 +498,16 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">標籤雲</h3>
+    <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/bash/" style="font-size: 10px;">bash</a> <a href="/tags/cocoa/" style="font-size: 12.5px;">cocoa</a> <a href="/tags/ios/" style="font-size: 17.5px;">ios</a> <a href="/tags/objc/" style="font-size: 20px;">objc</a> <a href="/tags/osx/" style="font-size: 15px;">osx</a> <a href="/tags/svn/" style="font-size: 10px;">svn</a> <a href="/tags/swift/" style="font-size: 15px;">swift</a>
+      <a href="/tags/TextKit/" style="font-size: 10px;">TextKit</a> <a href="/tags/bash/" style="font-size: 10px;">bash</a> <a href="/tags/cocoa/" style="font-size: 12.5px;">cocoa</a> <a href="/tags/ios/" style="font-size: 17.5px;">ios</a> <a href="/tags/objc/" style="font-size: 20px;">objc</a> <a href="/tags/osx/" style="font-size: 15px;">osx</a> <a href="/tags/svn/" style="font-size: 10px;">svn</a> <a href="/tags/swift/" style="font-size: 15px;">swift</a>
     </div>
   </div>
 
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">彙整</h3>
+    <h3 class="widget-title">Archives</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a></li></ul>
     </div>
@@ -517,7 +517,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">最新文章</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
         
@@ -526,19 +526,19 @@
           </li>
         
           <li>
-            <a href="/2016/05/09/CWInterface/">cocoa 查看无线是否打开 可链接的wifi列表</a>
-          </li>
-        
-          <li>
             <a href="/2016/05/09/swift_string_2_object/">swift 通过 string 创建 object</a>
           </li>
         
           <li>
-            <a href="/2016/05/09/KVO_options/">KVO 几个options</a>
+            <a href="/2016/05/09/NSEventModifierFlags/">swift NSEventModifierFlags &#39;&amp;&#39; &#39;|&#39; 操作</a>
           </li>
         
           <li>
-            <a href="/2016/05/09/svn_ignore/">svn ignore files</a>
+            <a href="/2016/05/09/nssound/">cocoa播放音频</a>
+          </li>
+        
+          <li>
+            <a href="/2016/05/09/textkit/">TextKit</a>
           </li>
         
       </ul>
