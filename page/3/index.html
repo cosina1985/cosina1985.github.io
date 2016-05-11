@@ -64,9 +64,9 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-disable_nap" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-ios_save_screen" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/03/24/disable_nap/" class="article-date">
+    <a href="/2016/03/24/ios_save_screen/" class="article-date">
   <time datetime="2016-03-24T02:54:00.000Z" itemprop="datePublished">2016-03-24</time>
 </a>
     
@@ -78,7 +78,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/24/disable_nap/">Disable App Nap in MacOS</a>
+      <a class="article-title" href="/2016/03/24/ios_save_screen/">ios 截屏保存到UIImage</a>
     </h1>
   
 
@@ -86,15 +86,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><em>from 10.9</em><br><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> ([[<span class="built_in">NSProcessInfo</span> processInfo] respondsToSelector:<span class="keyword">@selector</span>(beginActivityWithOptions:reason:)]) &#123;</span><br><span class="line"> [[<span class="built_in">NSProcessInfo</span> processInfo] beginActivityWithOptions:<span class="number">0x00FFFFFF</span> reason:<span class="string">@"receiving OSC messages"</span>]; </span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></p>
+        <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">CGSize</span> imageSize = [[<span class="built_in">UIScreen</span> mainScreen] bounds].size;</span><br><span class="line"> <span class="built_in">UIGraphicsBeginImageContextWithOptions</span>(imageSize, <span class="literal">NO</span>, <span class="number">0</span>);</span><br><span class="line"> [[<span class="keyword">self</span>.view layer] renderInContext:<span class="built_in">UIGraphicsGetCurrentContext</span>()];</span><br><span class="line"> <span class="built_in">UIImage</span> *newImage = <span class="built_in">UIGraphicsGetImageFromCurrentImageContext</span>();</span><br><span class="line"> <span class="built_in">UIGraphicsEndImageContext</span>();</span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/24/disable_nap/" data-id="cio2l6p3q0008y66u4qjzmvnm" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/03/24/ios_save_screen/" data-id="cio2lchhy000lzb6u3uwzk5e7" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/objc/">objc</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/osx/">osx</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ios/">ios</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/objc/">objc</a></li></ul>
 
     </footer>
   </div>
@@ -136,10 +136,49 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/24/core_graphics/" data-id="cio2l6p3l0006y66u14h0xm87" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/03/24/core_graphics/" data-id="cio2lchgs0003zb6u5x3di9nk" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/objc/">objc</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-disable_nap" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/03/24/disable_nap/" class="article-date">
+  <time datetime="2016-03-24T02:54:00.000Z" itemprop="datePublished">2016-03-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/24/disable_nap/">Disable App Nap in MacOS</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p><em>from 10.9</em><br><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> ([[<span class="built_in">NSProcessInfo</span> processInfo] respondsToSelector:<span class="keyword">@selector</span>(beginActivityWithOptions:reason:)]) &#123;</span><br><span class="line"> [[<span class="built_in">NSProcessInfo</span> processInfo] beginActivityWithOptions:<span class="number">0x00FFFFFF</span> reason:<span class="string">@"receiving OSC messages"</span>]; </span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/03/24/disable_nap/" data-id="cio2lchha0008zb6ug86i30jy" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/objc/">objc</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/osx/">osx</a></li></ul>
 
     </footer>
   </div>
@@ -175,7 +214,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/22/nsalert/" data-id="cio2l6p50000zy66u1rqgliww" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/03/22/nsalert/" data-id="cio2lchis0012zb6u0p88rx89" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cocoa/">cocoa</a></li></ul>
@@ -221,7 +260,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/22/ios_appdelegate_lifecycle/" data-id="cio2l6p3y000dy66u8jetw91o" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/03/22/ios_appdelegate_lifecycle/" data-id="cio2lchho000dzb6ufcju7z3o" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ios/">ios</a></li></ul>
@@ -260,7 +299,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/22/image_data_from_nsdata/" data-id="cio2l6p3t000ay66ulmep8nxr" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/03/22/image_data_from_nsdata/" data-id="cio2lchhg000czb6ugnlvqzut" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/objc/">objc</a></li></ul>
@@ -298,7 +337,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/TextKit/" style="font-size: 10px;">TextKit</a> <a href="/tags/bash/" style="font-size: 10px;">bash</a> <a href="/tags/cocoa/" style="font-size: 12.5px;">cocoa</a> <a href="/tags/ios/" style="font-size: 17.5px;">ios</a> <a href="/tags/objc/" style="font-size: 20px;">objc</a> <a href="/tags/osx/" style="font-size: 15px;">osx</a> <a href="/tags/svn/" style="font-size: 10px;">svn</a> <a href="/tags/swift/" style="font-size: 15px;">swift</a>
+      <a href="/tags/TextKit/" style="font-size: 10px;">TextKit</a> <a href="/tags/bash/" style="font-size: 10px;">bash</a> <a href="/tags/cocoa/" style="font-size: 12px;">cocoa</a> <a href="/tags/ios/" style="font-size: 18px;">ios</a> <a href="/tags/objc/" style="font-size: 20px;">objc</a> <a href="/tags/osx/" style="font-size: 14px;">osx</a> <a href="/tags/svn/" style="font-size: 10px;">svn</a> <a href="/tags/swift/" style="font-size: 16px;">swift</a>
     </div>
   </div>
 
@@ -328,15 +367,15 @@
           </li>
         
           <li>
-            <a href="/2016/05/09/svn_ignore/">svn ignore files</a>
+            <a href="/2016/05/09/textkit/">TextKit</a>
+          </li>
+        
+          <li>
+            <a href="/2016/05/09/NSEventModifierFlags/">swift NSEventModifierFlags &#39;&amp;&#39; &#39;|&#39; 操作</a>
           </li>
         
           <li>
             <a href="/2016/05/09/KVO_options/">KVO 几个options</a>
-          </li>
-        
-          <li>
-            <a href="/2016/05/09/nssound/">cocoa播放音频</a>
           </li>
         
       </ul>
