@@ -53,7 +53,7 @@
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Søk"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -64,9 +64,9 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-AXIsProcessTrustedWithOptions" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-disable_nap" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/03/24/AXIsProcessTrustedWithOptions/" class="article-date">
+    <a href="/2016/03/24/disable_nap/" class="article-date">
   <time datetime="2016-03-24T02:54:00.000Z" itemprop="datePublished">2016-03-24</time>
 </a>
     
@@ -78,7 +78,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/24/AXIsProcessTrustedWithOptions/">AXIsProcessTrustedWithOptions</a>
+      <a class="article-title" href="/2016/03/24/disable_nap/">Disable App Nap in MacOS</a>
     </h1>
   
 
@@ -86,16 +86,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSDictionary</span> *options = @&#123;(<span class="keyword">id</span>)kAXTrustedCheckOptionPrompt: @YES&#125;;</span><br><span class="line"><span class="built_in">BOOL</span> accessibilityEnabled =</span><br><span class="line"> AXIsProcessTrustedWithOptions((<span class="built_in">CFDictionaryRef</span>)options);</span><br></pre></td></tr></table></figure>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> options:[<span class="type">NSString</span>:<span class="type">NSNumber</span>] = </span><br><span class="line">[<span class="type">String</span>(kAXTrustedCheckOptionPrompt.takeRetainedValue()) <span class="keyword">as</span> <span class="type">String</span>:<span class="literal">true</span>]</span><br><span class="line"><span class="keyword">let</span> accessibilityEnabled = <span class="type">AXIsProcessTrustedWithOptions</span>(options);</span><br></pre></td></tr></table></figure>
+        <p><em>from 10.9</em><br><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> ([[<span class="built_in">NSProcessInfo</span> processInfo] respondsToSelector:<span class="keyword">@selector</span>(beginActivityWithOptions:reason:)]) &#123;</span><br><span class="line"> [[<span class="built_in">NSProcessInfo</span> processInfo] beginActivityWithOptions:<span class="number">0x00FFFFFF</span> reason:<span class="string">@"receiving OSC messages"</span>]; </span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/24/AXIsProcessTrustedWithOptions/" data-id="cio2lf5eo0001zu6u8bhwj9bn" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/03/24/disable_nap/" data-id="ciofx9fwb0009timtkge9s2j6" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/osx/">osx</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/objc/">objc</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/osx/">osx</a></li></ul>
 
     </footer>
   </div>
@@ -104,9 +103,9 @@
 
 
   
-    <article id="post-ios_url_rate_download" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-core_graphics" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/03/24/ios_url_rate_download/" class="article-date">
+    <a href="/2016/03/24/core_graphics/" class="article-date">
   <time datetime="2016-03-24T02:54:00.000Z" itemprop="datePublished">2016-03-24</time>
 </a>
     
@@ -118,7 +117,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/24/ios_url_rate_download/">ios appstore 下载链接 评价链接</a>
+      <a class="article-title" href="/2016/03/24/core_graphics/">Core Graphics</a>
     </h1>
   
 
@@ -126,16 +125,60 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//http://itunes.apple.com/us/app/idxxxxxxx</span></span><br><span class="line"><span class="built_in">NSString</span> *str = [<span class="built_in">NSString</span> stringWithFormat:</span><br><span class="line">	<span class="string">@"http://itunes.apple.com/us/app/id%d"</span>,appid];</span><br><span class="line"></span><br><span class="line">[[<span class="built_in">UIApplication</span> sharedApplication] openURL:[<span class="built_in">NSURL</span> urlWithString:str]];</span><br></pre></td></tr></table></figure>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//跳转到评价页面</span></span><br><span class="line"><span class="built_in">NSString</span> *str = [<span class="built_in">NSString</span> stringWithFormat:</span><br><span class="line">	<span class="string">@"itms-apps://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&amp;id;=%d"</span>,appid];</span><br><span class="line">[[<span class="built_in">UIApplication</span> sharedApplication] openURL:[<span class="built_in">NSURL</span> urlWithString:str]];</span><br></pre></td></tr></table></figure>
+        <p>画圆</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> path = <span class="type">UIBezierPath</span>(ovalInRect: rect)</span><br><span class="line">   fillColor.setFill()</span><br><span class="line">   path.fill()</span><br></pre></td></tr></table></figure>
+<p>创建path</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> plusPath = <span class="type">UIBezierPath</span>()</span><br></pre></td></tr></table></figure>
+<p>创建扇形</p>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//2 - draw the outer arc</span></span><br><span class="line"><span class="keyword">var</span> outlinePath = <span class="type">UIBezierPath</span>(arcCenter: center, </span><br><span class="line">                                  radius: bounds.width/<span class="number">2</span> - <span class="number">2.5</span>,</span><br><span class="line">                              startAngle: startAngle, </span><br><span class="line">                                endAngle: outlineEndAngle,</span><br><span class="line">                               clockwise: <span class="literal">true</span>)</span><br><span class="line"> </span><br><span class="line"><span class="comment">//3 - draw the inner arc</span></span><br><span class="line">outlinePath.addArcWithCenter(center, </span><br><span class="line">                     radius: bounds.width/<span class="number">2</span> - arcWidth + <span class="number">2.5</span>,</span><br><span class="line">                 startAngle: outlineEndAngle, </span><br><span class="line">                   endAngle: startAngle, </span><br><span class="line">                  clockwise: <span class="literal">false</span>)</span><br></pre></td></tr></table></figure>
+<p>角度<br>顺时针 3点钟是0°角</p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/24/ios_url_rate_download/" data-id="cio2lf5g7000qzu6umtnlxokq" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/03/24/core_graphics/" data-id="ciofx9fwg000ctimte3rd3u9l" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ios/">ios</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/objc/">objc</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/objc/">objc</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-uitextfield_placeholder_color" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/03/24/uitextfield_placeholder_color/" class="article-date">
+  <time datetime="2016-03-24T02:54:00.000Z" itemprop="datePublished">2016-03-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/24/uitextfield_placeholder_color/">UITextfield placeholder color</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="keyword">void</span>) drawPlaceholderInRect:(<span class="built_in">CGRect</span>)rect &#123;</span><br><span class="line">    [[<span class="built_in">UIColor</span> blueColor] setFill];</span><br><span class="line">    [<span class="keyword">self</span>.placeholder drawInRect:rect </span><br><span class="line">						withFont:<span class="keyword">self</span>.font </span><br><span class="line">				   lineBreakMode:<span class="built_in">UILineBreakModeTailTruncation</span> </span><br><span class="line">						alignment:<span class="keyword">self</span>.textAlignment];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/03/24/uitextfield_placeholder_color/" data-id="ciofx9g050021timtdnks2spv" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/objc/">objc</a></li></ul>
 
     </footer>
   </div>
@@ -171,7 +214,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/22/nsalert/" data-id="cio2lf5go000zzu6uxb06pgvo" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/03/22/nsalert/" data-id="ciofx9fxl000utimtre5na7fe" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cocoa/">cocoa</a></li></ul>
@@ -217,7 +260,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/22/ios_appdelegate_lifecycle/" data-id="cio2lf5fs000ezu6uy3exq5yi" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/03/22/ios_appdelegate_lifecycle/" data-id="ciofx9fxa000mtimtn3hnl6ep" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ios/">ios</a></li></ul>
@@ -256,7 +299,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/22/image_data_from_nsdata/" data-id="cio2lf5fj000dzu6u9axedmfw" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/03/22/image_data_from_nsdata/" data-id="ciofx9fwz000gtimtr9am073e" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/objc/">objc</a></li></ul>
@@ -297,7 +340,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/01/22/transparent_nsmenuitem/" data-id="cio2lf5hf001gzu6u277ly5la" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/01/22/transparent_nsmenuitem/" data-id="ciofx9g010020timtuvbtw27i" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/osx/">osx</a></li></ul>
@@ -335,14 +378,14 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/TextKit/" style="font-size: 10px;">TextKit</a> <a href="/tags/bash/" style="font-size: 10px;">bash</a> <a href="/tags/cocoa/" style="font-size: 12px;">cocoa</a> <a href="/tags/ios/" style="font-size: 18px;">ios</a> <a href="/tags/objc/" style="font-size: 20px;">objc</a> <a href="/tags/osx/" style="font-size: 16px;">osx</a> <a href="/tags/svn/" style="font-size: 10px;">svn</a> <a href="/tags/swift/" style="font-size: 14px;">swift</a>
+      <a href="/tags/TextKit/" style="font-size: 10px;">TextKit</a> <a href="/tags/bash/" style="font-size: 10px;">bash</a> <a href="/tags/cocoa/" style="font-size: 12.5px;">cocoa</a> <a href="/tags/ios/" style="font-size: 17.5px;">ios</a> <a href="/tags/objc/" style="font-size: 20px;">objc</a> <a href="/tags/osx/" style="font-size: 15px;">osx</a> <a href="/tags/svn/" style="font-size: 10px;">svn</a> <a href="/tags/swift/" style="font-size: 15px;">swift</a>
     </div>
   </div>
 
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Archives</h3>
+    <h3 class="widget-title">Arkiv</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a></li></ul>
     </div>
@@ -352,7 +395,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">Siste innlegg</h3>
     <div class="widget">
       <ul>
         
@@ -361,15 +404,15 @@
           </li>
         
           <li>
-            <a href="/2016/05/09/CWInterface/">cocoa 查看无线是否打开 可链接的wifi列表</a>
+            <a href="/2016/05/09/svn_ignore/">svn ignore files</a>
           </li>
         
           <li>
-            <a href="/2016/05/09/NSEventModifierFlags/">swift NSEventModifierFlags &#39;&amp;&#39; &#39;|&#39; 操作</a>
+            <a href="/2016/05/09/KVO_options/">KVO 几个options</a>
           </li>
         
           <li>
-            <a href="/2016/05/09/textkit/">TextKit</a>
+            <a href="/2016/05/09/nssound/">cocoa播放音频</a>
           </li>
         
           <li>
