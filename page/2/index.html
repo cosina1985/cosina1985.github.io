@@ -53,7 +53,7 @@
         
           <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Søk"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" results="0" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -63,6 +63,51 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-layer_backed" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/09/layer_backed/" class="article-date">
+  <time datetime="2016-05-09T02:54:00.000Z" itemprop="datePublished">2016-05-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/09/layer_backed/">Layer-Backed</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//layer-backed view = false</span></span><br><span class="line">-(<span class="keyword">void</span>) drawRect</span><br><span class="line"></span><br><span class="line"><span class="comment">//layer-backed view = true</span></span><br><span class="line">	<span class="comment">//wantsUpdateLayer = true</span></span><br><span class="line">		-(<span class="built_in">BOOL</span>) wantsUpdateLayer</span><br><span class="line">	<span class="comment">//wantsUpdateLayer = false</span></span><br><span class="line">		- (<span class="keyword">void</span>)drawRect:(<span class="built_in">NSRect</span>)dirtyRect</span><br></pre></td></tr></table></figure>
+<p><strong>Layer-Backed Views</strong></p>
+<p>By default, AppKit views are not backed by Core Animation layers; layer-backing support has been integrated into AppKit retroactively. But while you never have to worry about this with UIKit, with AppKit there are decisions to make. AppKit differentiates between <strong>layer-backed</strong> and <strong>layer-hosting</strong> views, and layer backing can be turned on and off on a per-view-tree basis.</p>
+<p>The most straightforward approach to enable layer backing is to set the <strong>wantsLayer</strong> property to YES on the window’s content view. This will cause all views in the window’s view tree to have their own backing layers, so there’s no need to repeatedly set this property on each individual view. This can be done in code or simply in Interface Builder’s View Effects Inspector.</p>
+<p>In contrast to iOS, on the Mac you should treat the backing layers as an implementation detail. This means you should not try to interact with the layers directly, as AppKit owns those layers. For example, on iOS you could simply say:<br>SELECT ALL</p>
+<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">self</span>.layer.backgroundColor = [<span class="built_in">UIColor</span> redColor].CGColor;</span><br></pre></td></tr></table></figure>
+<p>But in AppKit, you shouldn’t touch the layer. If you want to interact with the layer in such ways, then you have to go one step further. Overriding NSView’s <strong>wantsUpdateLayer</strong> method to return YES enables you to change the layer’s properties. If you do this though, AppKit will no longer call the view’s drawRect: method. Instead, updateLayer will be called during the view update cycle, and this is where you can modify the layer.</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/05/09/layer_backed/" data-id="cioi0squk000tqpmtop8rd3mx" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cocoa/">cocoa</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-bash_history" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -92,7 +137,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/04/09/bash_history/" data-id="ciofx9fwu000dtimtfysmjsuy" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/04/09/bash_history/" data-id="cioi0sqtf0008qpmthhtza6tp" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/bash/">bash</a></li></ul>
@@ -131,7 +176,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/04/08/nsevent_global_monitor/" data-id="ciofx9fyi0016timt6xq7aqy7" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/04/08/nsevent_global_monitor/" data-id="cioi0sqv00011qpmtolban0fr" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/osx/">osx</a></li></ul>
@@ -170,10 +215,49 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/04/08/ios_camera_authorization/" data-id="ciofx9fxy000ztimt2uffyzvk" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/04/08/ios_camera_authorization/" data-id="cioi0squc000oqpmtkkdj4m36" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ios/">ios</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-ios_view_rotate" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/03/25/ios_view_rotate/" class="article-date">
+  <time datetime="2016-03-25T07:31:00.000Z" itemprop="datePublished">2016-03-25</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/25/ios_view_rotate/">UIView rotate Infinite</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#import <span class="meta-string">&lt;QuartzCore/QuartzCore.h&gt;</span> </span></span><br><span class="line">- (<span class="keyword">void</span>) spinAnimationOnView:(<span class="built_in">UIView</span>*)view</span><br><span class="line">                       duration:(<span class="built_in">CGFloat</span>)duration</span><br><span class="line">                      rotations:(<span class="built_in">CGFloat</span>)rotations</span><br><span class="line">                         repeat:(<span class="keyword">float</span>)repeat; &#123;</span><br><span class="line">    <span class="built_in">CABasicAnimation</span> *animation;</span><br><span class="line">    animation = [<span class="built_in">CABasicAnimation</span> animationWithKeyPath:<span class="string">@"transform.rotation.z"</span>];</span><br><span class="line">    animation.toValue = [<span class="built_in">NSNumber</span> numberWithFloat: M_PI * <span class="number">2.0</span> * rotations * duration ];</span><br><span class="line">    animation.duration = duration;</span><br><span class="line">    animation.cumulative = <span class="literal">YES</span>;</span><br><span class="line">    animation.repeatCount = repeat;</span><br><span class="line">    [view.layer addAnimation:animation forKey:<span class="string">@"rotationAnimation"</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/03/25/ios_view_rotate/" data-id="cioi0squp000wqpmtlhn0yb05" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ios/">ios</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/objc/">objc</a></li></ul>
 
     </footer>
   </div>
@@ -221,7 +305,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/25/swift_2.2_changelog/" data-id="ciofx9fz0001dtimtqanm1bqu" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/03/25/swift_2.2_changelog/" data-id="cioi0sqvj001iqpmt6vx7vc1g" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/swift/">swift</a></li></ul>
@@ -233,10 +317,10 @@
 
 
   
-    <article id="post-ios_view_rotate" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-fieldeditor" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/03/25/ios_view_rotate/" class="article-date">
-  <time datetime="2016-03-25T07:31:00.000Z" itemprop="datePublished">2016-03-25</time>
+    <a href="/2016/03/24/fieldeditor/" class="article-date">
+  <time datetime="2016-03-24T02:54:00.000Z" itemprop="datePublished">2016-03-24</time>
 </a>
     
   </div>
@@ -247,7 +331,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/25/ios_view_rotate/">UIView rotate Infinite</a>
+      <a class="article-title" href="/2016/03/24/fieldeditor/">fieldeditor</a>
     </h1>
   
 
@@ -255,12 +339,90 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#import <span class="meta-string">&lt;QuartzCore/QuartzCore.h&gt;</span> </span></span><br><span class="line">- (<span class="keyword">void</span>) spinAnimationOnView:(<span class="built_in">UIView</span>*)view</span><br><span class="line">                       duration:(<span class="built_in">CGFloat</span>)duration</span><br><span class="line">                      rotations:(<span class="built_in">CGFloat</span>)rotations</span><br><span class="line">                         repeat:(<span class="keyword">float</span>)repeat; &#123;</span><br><span class="line">    <span class="built_in">CABasicAnimation</span> *animation;</span><br><span class="line">    animation = [<span class="built_in">CABasicAnimation</span> animationWithKeyPath:<span class="string">@"transform.rotation.z"</span>];</span><br><span class="line">    animation.toValue = [<span class="built_in">NSNumber</span> numberWithFloat: M_PI * <span class="number">2.0</span> * rotations * duration ];</span><br><span class="line">    animation.duration = duration;</span><br><span class="line">    animation.cumulative = <span class="literal">YES</span>;</span><br><span class="line">    animation.repeatCount = repeat;</span><br><span class="line">    [view.layer addAnimation:animation forKey:<span class="string">@"rotationAnimation"</span>];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <p>TextField 焦点从f0-&gt;f1 切换<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">FieldEditor1 resignFirstResponder</span><br><span class="line">FieldEditor1 resignFirstResponder</span><br><span class="line">TextField-f1 becomeFirstResponder</span><br><span class="line">TextField-f1 resignFirstResponder</span><br><span class="line">FieldEditor1 becomeFirstResponder</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/25/ios_view_rotate/" data-id="ciofx9fxh000rtimto5flikzx" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/03/24/fieldeditor/" data-id="cioi0sqtw000eqpmtcpa9jh3o" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cocoa/">cocoa</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-uitextfield_placeholder_color" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/03/24/uitextfield_placeholder_color/" class="article-date">
+  <time datetime="2016-03-24T02:54:00.000Z" itemprop="datePublished">2016-03-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/24/uitextfield_placeholder_color/">UITextfield placeholder color</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">- (<span class="keyword">void</span>) drawPlaceholderInRect:(<span class="built_in">CGRect</span>)rect &#123;</span><br><span class="line">    [[<span class="built_in">UIColor</span> blueColor] setFill];</span><br><span class="line">    [<span class="keyword">self</span>.placeholder drawInRect:rect </span><br><span class="line">						withFont:<span class="keyword">self</span>.font </span><br><span class="line">				   lineBreakMode:<span class="built_in">UILineBreakModeTailTruncation</span> </span><br><span class="line">						alignment:<span class="keyword">self</span>.textAlignment];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/03/24/uitextfield_placeholder_color/" data-id="cioi0sqvu001nqpmt48ias9yq" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/objc/">objc</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-ios_save_screen" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/03/24/ios_save_screen/" class="article-date">
+  <time datetime="2016-03-24T02:54:00.000Z" itemprop="datePublished">2016-03-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/24/ios_save_screen/">ios 截屏保存到UIImage</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">CGSize</span> imageSize = [[<span class="built_in">UIScreen</span> mainScreen] bounds].size;</span><br><span class="line"> <span class="built_in">UIGraphicsBeginImageContextWithOptions</span>(imageSize, <span class="literal">NO</span>, <span class="number">0</span>);</span><br><span class="line"> [[<span class="keyword">self</span>.view layer] renderInContext:<span class="built_in">UIGraphicsGetCurrentContext</span>()];</span><br><span class="line"> <span class="built_in">UIImage</span> *newImage = <span class="built_in">UIGraphicsGetImageFromCurrentImageContext</span>();</span><br><span class="line"> <span class="built_in">UIGraphicsEndImageContext</span>();</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/03/24/ios_save_screen/" data-id="cioi0squ4000jqpmt3uit3i70" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ios/">ios</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/objc/">objc</a></li></ul>
@@ -299,168 +461,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/24/CIFilter/" data-id="ciofx9fvw0004timticw6btlw" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/03/24/CIFilter/" data-id="cioi0sqt50003qpmtrwuedfkn" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ios/">ios</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/swift/">swift</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-AXIsProcessTrustedWithOptions" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/03/24/AXIsProcessTrustedWithOptions/" class="article-date">
-  <time datetime="2016-03-24T02:54:00.000Z" itemprop="datePublished">2016-03-24</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/24/AXIsProcessTrustedWithOptions/">AXIsProcessTrustedWithOptions</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSDictionary</span> *options = @&#123;(<span class="keyword">id</span>)kAXTrustedCheckOptionPrompt: @YES&#125;;</span><br><span class="line"><span class="built_in">BOOL</span> accessibilityEnabled =</span><br><span class="line"> AXIsProcessTrustedWithOptions((<span class="built_in">CFDictionaryRef</span>)options);</span><br></pre></td></tr></table></figure>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> options:[<span class="type">NSString</span>:<span class="type">NSNumber</span>] = </span><br><span class="line">[<span class="type">String</span>(kAXTrustedCheckOptionPrompt.takeRetainedValue()) <span class="keyword">as</span> <span class="type">String</span>:<span class="literal">true</span>]</span><br><span class="line"><span class="keyword">let</span> accessibilityEnabled = <span class="type">AXIsProcessTrustedWithOptions</span>(options);</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/24/AXIsProcessTrustedWithOptions/" data-id="ciofx9fvb0000timtqjai4xqf" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/osx/">osx</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-ios_url_rate_download" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/03/24/ios_url_rate_download/" class="article-date">
-  <time datetime="2016-03-24T02:54:00.000Z" itemprop="datePublished">2016-03-24</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/24/ios_url_rate_download/">ios appstore 下载链接 评价链接</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//http://itunes.apple.com/us/app/idxxxxxxx</span></span><br><span class="line"><span class="built_in">NSString</span> *str = [<span class="built_in">NSString</span> stringWithFormat:</span><br><span class="line">	<span class="string">@"http://itunes.apple.com/us/app/id%d"</span>,appid];</span><br><span class="line"></span><br><span class="line">[[<span class="built_in">UIApplication</span> sharedApplication] openURL:[<span class="built_in">NSURL</span> urlWithString:str]];</span><br></pre></td></tr></table></figure>
-<figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//跳转到评价页面</span></span><br><span class="line"><span class="built_in">NSString</span> *str = [<span class="built_in">NSString</span> stringWithFormat:</span><br><span class="line">	<span class="string">@"itms-apps://ax.itunes.apple.com/WebObjects/MZStore.woa/wa/viewContentsUserReviews?type=Purple+Software&amp;id;=%d"</span>,appid];</span><br><span class="line">[[<span class="built_in">UIApplication</span> sharedApplication] openURL:[<span class="built_in">NSURL</span> urlWithString:str]];</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/24/ios_url_rate_download/" data-id="ciofx9fx2000itimtc3h7ky3w" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ios/">ios</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/objc/">objc</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-ios_save_screen" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/03/24/ios_save_screen/" class="article-date">
-  <time datetime="2016-03-24T02:54:00.000Z" itemprop="datePublished">2016-03-24</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/24/ios_save_screen/">ios 截屏保存到UIImage</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">CGSize</span> imageSize = [[<span class="built_in">UIScreen</span> mainScreen] bounds].size;</span><br><span class="line"> <span class="built_in">UIGraphicsBeginImageContextWithOptions</span>(imageSize, <span class="literal">NO</span>, <span class="number">0</span>);</span><br><span class="line"> [[<span class="keyword">self</span>.view layer] renderInContext:<span class="built_in">UIGraphicsGetCurrentContext</span>()];</span><br><span class="line"> <span class="built_in">UIImage</span> *newImage = <span class="built_in">UIGraphicsGetImageFromCurrentImageContext</span>();</span><br><span class="line"> <span class="built_in">UIGraphicsEndImageContext</span>();</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/24/ios_save_screen/" data-id="ciofx9fx7000ltimtm6ba85oc" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ios/">ios</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/objc/">objc</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-fieldeditor" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/03/24/fieldeditor/" class="article-date">
-  <time datetime="2016-03-24T02:54:00.000Z" itemprop="datePublished">2016-03-24</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/24/fieldeditor/">fieldeditor</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>TextField 焦点从f0-&gt;f1 切换<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">FieldEditor1 resignFirstResponder</span><br><span class="line">FieldEditor1 resignFirstResponder</span><br><span class="line">TextField-f1 becomeFirstResponder</span><br><span class="line">TextField-f1 resignFirstResponder</span><br><span class="line">FieldEditor1 becomeFirstResponder</span><br></pre></td></tr></table></figure></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/24/fieldeditor/" data-id="ciofx9fw70008timtdnt41hij" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cocoa/">cocoa</a></li></ul>
 
     </footer>
   </div>
@@ -502,7 +506,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Arkiv</h3>
+    <h3 class="widget-title">Archives</h3>
     <div class="widget">
       <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/04/">April 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/03/">March 2016</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/01/">January 2016</a></li></ul>
     </div>
@@ -512,28 +516,28 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Siste innlegg</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2016/05/22/size_class/">Size Class</a>
+          </li>
         
           <li>
             <a href="/2016/05/09/objc_load_initialize/">NSObject load 和 initialize 的调用时间和次数</a>
           </li>
         
           <li>
-            <a href="/2016/05/09/svn_ignore/">svn ignore files</a>
+            <a href="/2016/05/09/osx_command_line/">OSX Command Line Read StdIn</a>
           </li>
         
           <li>
-            <a href="/2016/05/09/KVO_options/">KVO 几个options</a>
+            <a href="/2016/05/09/NSEventModifierFlags/">swift NSEventModifierFlags &#39;&amp;&#39; &#39;|&#39; 操作</a>
           </li>
         
           <li>
-            <a href="/2016/05/09/nssound/">cocoa播放音频</a>
-          </li>
-        
-          <li>
-            <a href="/2016/05/09/swift_string_2_object/">swift 通过 string 创建 object</a>
+            <a href="/2016/05/09/textkit/">TextKit</a>
           </li>
         
       </ul>
