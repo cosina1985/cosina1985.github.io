@@ -86,13 +86,13 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSString</span> *urlString = <span class="string">@"http://www.books.com:3321/lib/query;steve?key=job&amp;sort=asc#chapter2"</span>;</span><br><span class="line">        <span class="built_in">NSURL</span> *url = [<span class="built_in">NSURL</span> URLWithString:urlString];</span><br><span class="line">        </span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"url.absoluteString %@"</span>,url.absoluteString);</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"url.absoluteURL %@"</span>,url.absoluteURL);</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"url.baseURL %@"</span>,url.baseURL);</span><br><span class="line">        </span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"url.scheme %@"</span>,url.scheme);</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"url.host %@"</span>,url.host);</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"url.port %@"</span>,url.port);</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"url.query %@"</span>,url.query);</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"url.fragment %@"</span>,url.fragment);</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"url.parameterString %@"</span>,url.parameterString);</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"url.pathExtension %@"</span>,url.pathExtension);</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"url.path %@"</span>,url.path);</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"url.pathComponents %@"</span>,url.pathComponents);</span><br><span class="line">        <span class="built_in">NSLog</span>(<span class="string">@"url.lastPathComponent %@"</span>,url.lastPathComponent);</span><br></pre></td></tr></table></figure>
+        <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSString</span> *urlString = <span class="string">@"http://www.books.com:3321/lib/query;steve?key=job&amp;sort=asc#chapter2"</span>;</span><br><span class="line"><span class="built_in">NSURL</span> *url = [<span class="built_in">NSURL</span> URLWithString:urlString];</span><br><span class="line">   </span><br><span class="line"><span class="built_in">NSLog</span>(<span class="string">@"url.absoluteString %@"</span>,url.absoluteString);</span><br><span class="line"><span class="built_in">NSLog</span>(<span class="string">@"url.absoluteURL %@"</span>,url.absoluteURL);</span><br><span class="line"><span class="built_in">NSLog</span>(<span class="string">@"url.baseURL %@"</span>,url.baseURL);</span><br><span class="line">   </span><br><span class="line"><span class="built_in">NSLog</span>(<span class="string">@"url.scheme %@"</span>,url.scheme);</span><br><span class="line"><span class="built_in">NSLog</span>(<span class="string">@"url.host %@"</span>,url.host);</span><br><span class="line"><span class="built_in">NSLog</span>(<span class="string">@"url.port %@"</span>,url.port);</span><br><span class="line"><span class="built_in">NSLog</span>(<span class="string">@"url.query %@"</span>,url.query);</span><br><span class="line"><span class="built_in">NSLog</span>(<span class="string">@"url.fragment %@"</span>,url.fragment);</span><br><span class="line"><span class="built_in">NSLog</span>(<span class="string">@"url.parameterString %@"</span>,url.parameterString);</span><br><span class="line"><span class="built_in">NSLog</span>(<span class="string">@"url.pathExtension %@"</span>,url.pathExtension);</span><br><span class="line"><span class="built_in">NSLog</span>(<span class="string">@"url.path %@"</span>,url.path);</span><br><span class="line"><span class="built_in">NSLog</span>(<span class="string">@"url.pathComponents %@"</span>,url.pathComponents);</span><br><span class="line"><span class="built_in">NSLog</span>(<span class="string">@"url.lastPathComponent %@"</span>,url.lastPathComponent);</span><br></pre></td></tr></table></figure>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">url.absoluteString http://www.books.com:3321/lib/query;steve?key=job&amp;sort=asc#chapter2</span><br><span class="line">url.absoluteURL http://www.books.com:3321/lib/query;steve?key=job&amp;sort=asc#chapter2</span><br><span class="line">url.baseURL (null)</span><br><span class="line">url.scheme http</span><br><span class="line">url.host www.books.com</span><br><span class="line">url.port 3321</span><br><span class="line">url.query key=job&amp;sort=asc</span><br><span class="line">url.fragment chapter2</span><br><span class="line">url.parameterString steve</span><br><span class="line">url.pathExtension </span><br><span class="line">url.path /lib/query</span><br><span class="line">url.pathComponents (</span><br><span class="line">    &quot;/&quot;,</span><br><span class="line">    lib,</span><br><span class="line">    query</span><br><span class="line">)</span><br><span class="line">url.lastPathComponent query</span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/08/13/nsurl/" data-id="cirsirgt60013djmt9f0xsd8j" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2016/08/13/nsurl/" data-id="cirsiw9a60012f3mthw8rp8kt" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cocoa/">cocoa</a></li></ul>
@@ -132,7 +132,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/22/size_class/" data-id="cirsirgti001adjmtmmp6h3e2" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2016/05/22/size_class/" data-id="cirsiw9ae001cf3mt1aggss0x" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ios/">ios</a></li></ul>
@@ -173,49 +173,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/09/objc_load_initialize/" data-id="cirsirgt90015djmt9iyjbghc" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2016/05/09/objc_load_initialize/" data-id="cirsiw9ac0019f3mti2jv293h" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/objc/">objc</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-swift_string_2_object" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/05/09/swift_string_2_object/" class="article-date">
-  <time datetime="2016-05-09T02:55:37.000Z" itemprop="datePublished">2016-05-09</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/09/swift_string_2_object/">swift 通过 string 创建 object</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">IndexViewController</span>: <span class="title">UIViewController</span></span>&#123;&#125;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">let</span> className = <span class="string">"IndexViewController"</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">let</span> bundlePath = <span class="type">NSBundle</span>.mainBundle().bundlePath</span><br><span class="line"><span class="keyword">let</span> bundleFullName = bundlePath.componentsSeparatedByString(<span class="string">"/"</span>).last</span><br><span class="line"><span class="keyword">let</span> bundleName = bundleFullName?.componentsSeparatedByString(<span class="string">"."</span>).first</span><br><span class="line"><span class="keyword">let</span> clazz = <span class="type">NSClassFromString</span>(bundleName! + <span class="string">"."</span> + className)! <span class="keyword">as</span>! <span class="type">UIViewController</span>.<span class="type">Type</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">let</span> object = clazz.<span class="keyword">init</span>()</span><br><span class="line"><span class="comment">// let object1 = Index() 普通方法</span></span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/09/swift_string_2_object/" data-id="cirsirgtz001hdjmtyykj32sq" class="article-share-link">Partager</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/swift/">swift</a></li></ul>
 
     </footer>
   </div>
@@ -253,10 +214,49 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/09/textkit/" data-id="cirsirgu2001kdjmtrc1vn8jq" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2016/05/09/textkit/" data-id="cirsiw9bm001xf3mtu0c6lywv" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TextKit/">TextKit</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ios/">ios</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/objc/">objc</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-swift_string_2_object" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/09/swift_string_2_object/" class="article-date">
+  <time datetime="2016-05-09T02:55:37.000Z" itemprop="datePublished">2016-05-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/09/swift_string_2_object/">swift 通过 string 创建 object</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">IndexViewController</span>: <span class="title">UIViewController</span></span>&#123;&#125;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">let</span> className = <span class="string">"IndexViewController"</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">let</span> bundlePath = <span class="type">NSBundle</span>.mainBundle().bundlePath</span><br><span class="line"><span class="keyword">let</span> bundleFullName = bundlePath.componentsSeparatedByString(<span class="string">"/"</span>).last</span><br><span class="line"><span class="keyword">let</span> bundleName = bundleFullName?.componentsSeparatedByString(<span class="string">"."</span>).first</span><br><span class="line"><span class="keyword">let</span> clazz = <span class="type">NSClassFromString</span>(bundleName! + <span class="string">"."</span> + className)! <span class="keyword">as</span>! <span class="type">UIViewController</span>.<span class="type">Type</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">let</span> object = clazz.<span class="keyword">init</span>()</span><br><span class="line"><span class="comment">// let object1 = Index() 普通方法</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/05/09/swift_string_2_object/" data-id="cirsiw9av001jf3mtpeg2bax9" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/swift/">swift</a></li></ul>
 
     </footer>
   </div>
@@ -292,49 +292,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/09/KVO_options/" data-id="cirsirgqn0004djmtyquxfjof" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2016/05/09/KVO_options/" data-id="cirsiw98n0006f3mth2j40957" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/objc/">objc</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-osx_command_line" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/05/09/osx_command_line/" class="article-date">
-  <time datetime="2016-05-09T02:55:37.000Z" itemprop="datePublished">2016-05-09</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/09/osx_command_line/">OSX Command Line Read StdIn</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">readStdIn</span><span class="params">()</span></span> -&gt; <span class="type">String</span> &#123;</span><br><span class="line">        <span class="keyword">let</span> stdIn = <span class="type">NSFileHandle</span>.fileHandleWithStandardInput()</span><br><span class="line">        <span class="keyword">let</span> inputData = stdIn.availableData</span><br><span class="line">        <span class="keyword">let</span> string = <span class="type">NSString</span>(data: inputData, encoding: <span class="type">NSUTF8StringEncoding</span>)!</span><br><span class="line">        <span class="keyword">return</span> string.stringByTrimmingCharactersInSet(<span class="type">NSCharacterSet</span>.newlineCharacterSet())</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/09/osx_command_line/" data-id="cirsirgte0018djmt6jev5ogp" class="article-share-link">Partager</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/swift/">swift</a></li></ul>
 
     </footer>
   </div>
@@ -370,7 +331,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/09/CWInterface/" data-id="cirsirgqk0003djmtpermpz7k" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2016/05/09/CWInterface/" data-id="cirsiw97r0001f3mtdupny3l8" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/objc/">objc</a></li></ul>
@@ -409,7 +370,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/09/NSEventModifierFlags/" data-id="cirsirgqp0006djmtd1rpc1ac" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2016/05/09/NSEventModifierFlags/" data-id="cirsiw9850004f3mtveqrz7o7" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/swift/">swift</a></li></ul>
@@ -421,9 +382,9 @@
 
 
   
-    <article id="post-svn_ignore" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-nssound" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/05/09/svn_ignore/" class="article-date">
+    <a href="/2016/05/09/nssound/" class="article-date">
   <time datetime="2016-05-09T02:55:37.000Z" itemprop="datePublished">2016-05-09</time>
 </a>
     
@@ -435,7 +396,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/09/svn_ignore/">svn ignore files</a>
+      <a class="article-title" href="/2016/05/09/nssound/">cocoa播放音频 系统声效</a>
     </h1>
   
 
@@ -443,22 +404,55 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <ul>
-<li><p><strong>.xcuserstate</strong></p>
-</li>
-<li><p><strong>Xcode</strong><br><em>.pbxuser
-</em>.mode1v3<br><em>.mode2v3
-</em>.perspectivev3<br>*.xcuserstate<br>project.xcworkspace/<br>xcuserdata/</p>
-</li>
-</ul>
+        <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSString</span> *resourcePath = [[<span class="built_in">NSBundle</span> mainBundle] pathForResource:<span class="string">@"alert"</span> ofType:<span class="string">@"wav"</span>];</span><br><span class="line">_sound = [[<span class="built_in">NSSound</span> alloc] initWithContentsOfFile:resourcePath byReference:<span class="literal">YES</span>];</span><br></pre></td></tr></table></figure>
+<p>播放系统声效<br><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> soundIndex = <span class="number">0</span>;</span><br><span class="line">- (<span class="keyword">void</span>) tryLoopPlaySound&#123;</span><br><span class="line">    <span class="built_in">NSArray</span> *directoryContents = [[<span class="built_in">NSFileManager</span> defaultManager] contentsOfDirectoryAtPath:<span class="string">@"/System/Library/Sounds"</span></span><br><span class="line">                                                                                     error:<span class="literal">nil</span>];</span><br><span class="line">    <span class="built_in">NSUInteger</span> arrayCount = [directoryContents count];</span><br><span class="line">    <span class="keyword">if</span> (soundIndex &lt; arrayCount<span class="number">-1</span>) &#123;</span><br><span class="line">        soundIndex++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        soundIndex = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    [<span class="keyword">self</span> playSystemSound:soundIndex];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">-(<span class="keyword">void</span>) playSystemSound:(<span class="keyword">int</span>) index&#123;</span><br><span class="line">    <span class="built_in">NSArray</span> *directoryContents = [[<span class="built_in">NSFileManager</span> defaultManager] contentsOfDirectoryAtPath:<span class="string">@"/System/Library/Sounds"</span></span><br><span class="line">                                                                                     error:<span class="literal">nil</span>];</span><br><span class="line">    <span class="built_in">NSUInteger</span> arrayCount = [directoryContents count];</span><br><span class="line">    <span class="keyword">if</span>(index &gt;= arrayCount) &#123;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">NSString</span> *soundName = [directoryContents objectAtIndex:</span><br><span class="line">                           index];</span><br><span class="line">    soundName = [soundName stringByDeletingPathExtension];</span><br><span class="line">    <span class="built_in">NSSound</span> *systemSound = [<span class="built_in">NSSound</span> soundNamed:soundName];</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"soundName %@ %d"</span>,soundName, index);</span><br><span class="line">    [systemSound play];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/09/svn_ignore/" data-id="cirsirgto001cdjmt2r61ubt3" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2016/05/09/nssound/" data-id="cirsiw9a3000xf3mttbggvs59" class="article-share-link">Partager</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/svn/">svn</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/objc/">objc</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/osx/">osx</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-osx_command_line" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/09/osx_command_line/" class="article-date">
+  <time datetime="2016-05-09T02:55:37.000Z" itemprop="datePublished">2016-05-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/09/osx_command_line/">OSX Command Line Read StdIn</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">readStdIn</span><span class="params">()</span></span> -&gt; <span class="type">String</span> &#123;</span><br><span class="line">        <span class="keyword">let</span> stdIn = <span class="type">NSFileHandle</span>.fileHandleWithStandardInput()</span><br><span class="line">        <span class="keyword">let</span> inputData = stdIn.availableData</span><br><span class="line">        <span class="keyword">let</span> string = <span class="type">NSString</span>(data: inputData, encoding: <span class="type">NSUTF8StringEncoding</span>)!</span><br><span class="line">        <span class="keyword">return</span> string.stringByTrimmingCharactersInSet(<span class="type">NSCharacterSet</span>.newlineCharacterSet())</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/05/09/osx_command_line/" data-id="cirsiw9aa0017f3mtjtwmk27o" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/swift/">swift</a></li></ul>
 
     </footer>
   </div>
@@ -527,11 +521,11 @@
           </li>
         
           <li>
-            <a href="/2016/05/09/swift_string_2_object/">swift 通过 string 创建 object</a>
+            <a href="/2016/05/09/textkit/">TextKit</a>
           </li>
         
           <li>
-            <a href="/2016/05/09/textkit/">TextKit</a>
+            <a href="/2016/05/09/swift_string_2_object/">swift 通过 string 创建 object</a>
           </li>
         
       </ul>
