@@ -92,7 +92,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/08/13/nsurl/" data-id="civ9ja59100155m6uwoyyxsvn" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/08/13/nsurl/" data-id="cj2hd27cp0015640vhbuubzc4" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cocoa/">cocoa</a></li></ul>
@@ -132,7 +132,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/22/size_class/" data-id="civ9ja59l001d5m6uh8ca4mkx" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/22/size_class/" data-id="cj2hd27d9001t640vunpewgfx" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ios/">ios</a></li></ul>
@@ -173,7 +173,125 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/09/objc_load_initialize/" data-id="civ9ja59600185m6udz59d6tb" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/09/objc_load_initialize/" data-id="cj2hd27cs001c640vvk2cao4h" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/objc/">objc</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-nssound" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/09/nssound/" class="article-date">
+  <time datetime="2016-05-09T02:55:37.000Z" itemprop="datePublished">2016-05-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/09/nssound/">cocoa播放音频 系统声效</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSString</span> *resourcePath = [[<span class="built_in">NSBundle</span> mainBundle] pathForResource:<span class="string">@"alert"</span> ofType:<span class="string">@"wav"</span>];</span><br><span class="line">_sound = [[<span class="built_in">NSSound</span> alloc] initWithContentsOfFile:resourcePath byReference:<span class="literal">YES</span>];</span><br></pre></td></tr></table></figure>
+<p>播放系统声效<br><figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> soundIndex = <span class="number">0</span>;</span><br><span class="line">- (<span class="keyword">void</span>) tryLoopPlaySound&#123;</span><br><span class="line">    <span class="built_in">NSArray</span> *directoryContents = [[<span class="built_in">NSFileManager</span> defaultManager] contentsOfDirectoryAtPath:<span class="string">@"/System/Library/Sounds"</span></span><br><span class="line">                                                                                     error:<span class="literal">nil</span>];</span><br><span class="line">    <span class="built_in">NSUInteger</span> arrayCount = [directoryContents count];</span><br><span class="line">    <span class="keyword">if</span> (soundIndex &lt; arrayCount<span class="number">-1</span>) &#123;</span><br><span class="line">        soundIndex++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        soundIndex = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    [<span class="keyword">self</span> playSystemSound:soundIndex];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">-(<span class="keyword">void</span>) playSystemSound:(<span class="keyword">int</span>) index&#123;</span><br><span class="line">    <span class="built_in">NSArray</span> *directoryContents = [[<span class="built_in">NSFileManager</span> defaultManager] contentsOfDirectoryAtPath:<span class="string">@"/System/Library/Sounds"</span></span><br><span class="line">                                                                                     error:<span class="literal">nil</span>];</span><br><span class="line">    <span class="built_in">NSUInteger</span> arrayCount = [directoryContents count];</span><br><span class="line">    <span class="keyword">if</span>(index &gt;= arrayCount) &#123;</span><br><span class="line">        <span class="keyword">return</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">NSString</span> *soundName = [directoryContents objectAtIndex:</span><br><span class="line">                           index];</span><br><span class="line">    soundName = [soundName stringByDeletingPathExtension];</span><br><span class="line">    <span class="built_in">NSSound</span> *systemSound = [<span class="built_in">NSSound</span> soundNamed:soundName];</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"soundName %@ %d"</span>,soundName, index);</span><br><span class="line">    [systemSound play];</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/05/09/nssound/" data-id="cj2hd27cl000x640vgydvnykt" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/objc/">objc</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/osx/">osx</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-NSEventModifierFlags" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/09/NSEventModifierFlags/" class="article-date">
+  <time datetime="2016-05-09T02:55:37.000Z" itemprop="datePublished">2016-05-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/09/NSEventModifierFlags/">swift NSEventModifierFlags &#39;&amp;&#39; &#39;|&#39; 操作</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> flags = <span class="type">NSEventModifierFlags</span>(rawValue: <span class="type">NSEventModifierFlags</span>.<span class="type">NumericPadKeyMask</span>.rawValue | <span class="type">NSEventModifierFlags</span>.<span class="type">NumericPadKeyMask</span>.rawValue)</span><br><span class="line">      <span class="keyword">if</span> flags.<span class="built_in">contains</span>(<span class="type">NSEventModifierFlags</span>.<span class="type">NumericPadKeyMask</span>) &#123;</span><br><span class="line"> </span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/05/09/NSEventModifierFlags/" data-id="cj2hd27bt0007640vnwwv261m" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/swift/">swift</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-CWInterface" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/05/09/CWInterface/" class="article-date">
+  <time datetime="2016-05-09T02:55:37.000Z" itemprop="datePublished">2016-05-09</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/05/09/CWInterface/">cocoa 查看无线是否打开 可链接的wifi列表</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">CWInterface *wifi = [CWWiFiClient sharedWiFiClient].interface;</span><br><span class="line"> </span><br><span class="line"><span class="built_in">NSLog</span>(<span class="string">@"interfaceName: %@"</span>, wifi.interfaceName);</span><br><span class="line"><span class="built_in">NSLog</span>(<span class="string">@"ssid: %@"</span>, wifi.ssid);</span><br><span class="line"><span class="built_in">NSLog</span>(<span class="string">@"powerOn: %@"</span>, @(wifi.powerOn));</span><br><span class="line"> </span><br><span class="line"><span class="built_in">NSSet</span>&lt;CWNetwork *&gt; *result = [wifi scanForNetworksWithName:<span class="literal">nil</span> error:<span class="literal">nil</span>];</span><br><span class="line"><span class="built_in">NSLog</span>(<span class="string">@"可连接的wifi列表"</span>);</span><br><span class="line"><span class="keyword">for</span> (CWNetwork *each <span class="keyword">in</span> result) &#123;</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"---&gt;%@"</span>,each.ssid);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/05/09/CWInterface/" data-id="cj2hd27br0004640v73j6gq57" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/objc/">objc</a></li></ul>
@@ -212,87 +330,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/09/swift_string_2_object/" data-id="civ9ja59x001j5m6ula1y1wle" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/swift/">swift</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-textkit" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/05/09/textkit/" class="article-date">
-  <time datetime="2016-05-09T02:55:37.000Z" itemprop="datePublished">2016-05-09</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/09/textkit/">TextKit</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Getting to Know TextKit<br><a href="https://www.objc.io/issues/5-ios7/getting-to-know-textkit/" target="_blank" rel="external">https://www.objc.io/issues/5-ios7/getting-to-know-textkit/</a></p>
-<p>翻译<br><a href="http://blog.jobbole.com/51965/" target="_blank" rel="external">http://blog.jobbole.com/51965/</a></p>
-<p><img src="/images/14602517819485.png" alt=""></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/09/textkit/" data-id="civ9ja5a0001m5m6un4vkj859" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/TextKit/">TextKit</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ios/">ios</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/objc/">objc</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-osx_command_line" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/05/09/osx_command_line/" class="article-date">
-  <time datetime="2016-05-09T02:55:37.000Z" itemprop="datePublished">2016-05-09</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/09/osx_command_line/">OSX Command Line Read StdIn</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">readStdIn</span><span class="params">()</span></span> -&gt; <span class="type">String</span> &#123;</span><br><span class="line">        <span class="keyword">let</span> stdIn = <span class="type">NSFileHandle</span>.fileHandleWithStandardInput()</span><br><span class="line">        <span class="keyword">let</span> inputData = stdIn.availableData</span><br><span class="line">        <span class="keyword">let</span> string = <span class="type">NSString</span>(data: inputData, encoding: <span class="type">NSUTF8StringEncoding</span>)!</span><br><span class="line">        <span class="keyword">return</span> string.stringByTrimmingCharactersInSet(<span class="type">NSCharacterSet</span>.newlineCharacterSet())</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/09/osx_command_line/" data-id="civ9ja59a001a5m6uog8bte2z" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/09/swift_string_2_object/" data-id="cj2hd27dj001y640vmyglat27" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/swift/">swift</a></li></ul>
@@ -338,49 +376,10 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/09/svn_ignore/" data-id="civ9ja59q001h5m6ut3qrm3v4" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/09/svn_ignore/" data-id="cj2hd27cr0019640v0qwlkqxs" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/svn/">svn</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-    <article id="post-CWInterface" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/05/09/CWInterface/" class="article-date">
-  <time datetime="2016-05-09T02:55:37.000Z" itemprop="datePublished">2016-05-09</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/09/CWInterface/">cocoa 查看无线是否打开 可链接的wifi列表</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">CWInterface *wifi = [CWWiFiClient sharedWiFiClient].interface;</span><br><span class="line"> </span><br><span class="line"><span class="built_in">NSLog</span>(<span class="string">@"interfaceName: %@"</span>, wifi.interfaceName);</span><br><span class="line"><span class="built_in">NSLog</span>(<span class="string">@"ssid: %@"</span>, wifi.ssid);</span><br><span class="line"><span class="built_in">NSLog</span>(<span class="string">@"powerOn: %@"</span>, @(wifi.powerOn));</span><br><span class="line"> </span><br><span class="line"><span class="built_in">NSSet</span>&lt;CWNetwork *&gt; *result = [wifi scanForNetworksWithName:<span class="literal">nil</span> error:<span class="literal">nil</span>];</span><br><span class="line"><span class="built_in">NSLog</span>(<span class="string">@"可连接的wifi列表"</span>);</span><br><span class="line"><span class="keyword">for</span> (CWNetwork *each <span class="keyword">in</span> result) &#123;</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"---&gt;%@"</span>,each.ssid);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/09/CWInterface/" data-id="civ9ja56p00015m6u44x61nd7" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/objc/">objc</a></li></ul>
 
     </footer>
   </div>
@@ -416,7 +415,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/09/KVO_options/" data-id="civ9ja57000045m6ura0jmmvk" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/09/KVO_options/" data-id="cj2hd27bq0003640v0gqv343f" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/objc/">objc</a></li></ul>
@@ -428,9 +427,9 @@
 
 
   
-    <article id="post-NSEventModifierFlags" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-osx_command_line" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/05/09/NSEventModifierFlags/" class="article-date">
+    <a href="/2016/05/09/osx_command_line/" class="article-date">
   <time datetime="2016-05-09T02:55:37.000Z" itemprop="datePublished">2016-05-09</time>
 </a>
     
@@ -442,7 +441,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/05/09/NSEventModifierFlags/">swift NSEventModifierFlags &#39;&amp;&#39; &#39;|&#39; 操作</a>
+      <a class="article-title" href="/2016/05/09/osx_command_line/">OSX Command Line Read StdIn</a>
     </h1>
   
 
@@ -450,12 +449,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> flags = <span class="type">NSEventModifierFlags</span>(rawValue: <span class="type">NSEventModifierFlags</span>.<span class="type">NumericPadKeyMask</span>.rawValue | <span class="type">NSEventModifierFlags</span>.<span class="type">NumericPadKeyMask</span>.rawValue)</span><br><span class="line">      <span class="keyword">if</span> flags.<span class="built_in">contains</span>(<span class="type">NSEventModifierFlags</span>.<span class="type">NumericPadKeyMask</span>) &#123;</span><br><span class="line"> </span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
+        <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">readStdIn</span><span class="params">()</span></span> -&gt; <span class="type">String</span> &#123;</span><br><span class="line">        <span class="keyword">let</span> stdIn = <span class="type">NSFileHandle</span>.fileHandleWithStandardInput()</span><br><span class="line">        <span class="keyword">let</span> inputData = stdIn.availableData</span><br><span class="line">        <span class="keyword">let</span> string = <span class="type">NSString</span>(data: inputData, encoding: <span class="type">NSUTF8StringEncoding</span>)!</span><br><span class="line">        <span class="keyword">return</span> string.stringByTrimmingCharactersInSet(<span class="type">NSCharacterSet</span>.newlineCharacterSet())</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/05/09/NSEventModifierFlags/" data-id="civ9ja57500085m6u8fawwblh" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/05/09/osx_command_line/" data-id="cj2hd27cq0017640v3m2ofsow" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/swift/">swift</a></li></ul>
@@ -527,11 +526,11 @@
           </li>
         
           <li>
-            <a href="/2016/05/09/swift_string_2_object/">swift 通过 string 创建 object</a>
+            <a href="/2016/05/09/nssound/">cocoa播放音频 系统声效</a>
           </li>
         
           <li>
-            <a href="/2016/05/09/textkit/">TextKit</a>
+            <a href="/2016/05/09/NSEventModifierFlags/">swift NSEventModifierFlags &#39;&amp;&#39; &#39;|&#39; 操作</a>
           </li>
         
       </ul>
@@ -546,7 +545,7 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2016 cosina1985<br>
+      &copy; 2017 cosina1985<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>

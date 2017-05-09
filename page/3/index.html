@@ -64,45 +64,6 @@
       <div class="outer">
         <section id="main">
   
-    <article id="post-ios_save_screen" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2016/03/24/ios_save_screen/" class="article-date">
-  <time datetime="2016-03-24T02:54:00.000Z" itemprop="datePublished">2016-03-24</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/24/ios_save_screen/">ios 截屏保存到UIImage</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">CGSize</span> imageSize = [[<span class="built_in">UIScreen</span> mainScreen] bounds].size;</span><br><span class="line"> <span class="built_in">UIGraphicsBeginImageContextWithOptions</span>(imageSize, <span class="literal">NO</span>, <span class="number">0</span>);</span><br><span class="line"> [[<span class="keyword">self</span>.view layer] renderInContext:<span class="built_in">UIGraphicsGetCurrentContext</span>()];</span><br><span class="line"> <span class="built_in">UIImage</span> *newImage = <span class="built_in">UIGraphicsGetImageFromCurrentImageContext</span>();</span><br><span class="line"> <span class="built_in">UIGraphicsEndImageContext</span>();</span><br></pre></td></tr></table></figure>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/24/ios_save_screen/" data-id="civ9ja58c000o5m6ui1f5fixo" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ios/">ios</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/objc/">objc</a></li></ul>
-
-    </footer>
-  </div>
-  
-</article>
-
-
-  
     <article id="post-ios_url_rate_download" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2016/03/24/ios_url_rate_download/" class="article-date">
@@ -131,7 +92,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/24/ios_url_rate_download/" data-id="civ9ja58g000r5m6ujw5yui75" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/03/24/ios_url_rate_download/" data-id="cj2hd27c9000n640v6hh5hbv8" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ios/">ios</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/objc/">objc</a></li></ul>
@@ -143,9 +104,9 @@
 
 
   
-    <article id="post-core_graphics" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-ios_save_screen" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/03/24/core_graphics/" class="article-date">
+    <a href="/2016/03/24/ios_save_screen/" class="article-date">
   <time datetime="2016-03-24T02:54:00.000Z" itemprop="datePublished">2016-03-24</time>
 </a>
     
@@ -157,7 +118,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/24/core_graphics/">Core Graphics</a>
+      <a class="article-title" href="/2016/03/24/ios_save_screen/">ios 截屏保存到UIImage</a>
     </h1>
   
 
@@ -165,21 +126,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>画圆</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> path = <span class="type">UIBezierPath</span>(ovalInRect: rect)</span><br><span class="line">   fillColor.setFill()</span><br><span class="line">   path.fill()</span><br></pre></td></tr></table></figure>
-<p>创建path</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> plusPath = <span class="type">UIBezierPath</span>()</span><br></pre></td></tr></table></figure>
-<p>创建扇形</p>
-<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//2 - draw the outer arc</span></span><br><span class="line"><span class="keyword">var</span> outlinePath = <span class="type">UIBezierPath</span>(arcCenter: center, </span><br><span class="line">                                  radius: bounds.width/<span class="number">2</span> - <span class="number">2.5</span>,</span><br><span class="line">                              startAngle: startAngle, </span><br><span class="line">                                endAngle: outlineEndAngle,</span><br><span class="line">                               clockwise: <span class="literal">true</span>)</span><br><span class="line"> </span><br><span class="line"><span class="comment">//3 - draw the inner arc</span></span><br><span class="line">outlinePath.addArcWithCenter(center, </span><br><span class="line">                     radius: bounds.width/<span class="number">2</span> - arcWidth + <span class="number">2.5</span>,</span><br><span class="line">                 startAngle: outlineEndAngle, </span><br><span class="line">                   endAngle: startAngle, </span><br><span class="line">                  clockwise: <span class="literal">false</span>)</span><br></pre></td></tr></table></figure>
-<p>角度<br>顺时针 3点钟是0°角</p>
+        <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">CGSize</span> imageSize = [[<span class="built_in">UIScreen</span> mainScreen] bounds].size;</span><br><span class="line"> <span class="built_in">UIGraphicsBeginImageContextWithOptions</span>(imageSize, <span class="literal">NO</span>, <span class="number">0</span>);</span><br><span class="line"> [[<span class="keyword">self</span>.view layer] renderInContext:<span class="built_in">UIGraphicsGetCurrentContext</span>()];</span><br><span class="line"> <span class="built_in">UIImage</span> *newImage = <span class="built_in">UIGraphicsGetImageFromCurrentImageContext</span>();</span><br><span class="line"> <span class="built_in">UIGraphicsEndImageContext</span>();</span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/24/core_graphics/" data-id="civ9ja57700095m6uhyzbqjku" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/03/24/ios_save_screen/" data-id="cj2hd27cb000q640vytleu868" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/objc/">objc</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ios/">ios</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/objc/">objc</a></li></ul>
 
     </footer>
   </div>
@@ -215,7 +170,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/24/disable_nap/" data-id="civ9ja57a000c5m6uqqfyv5ud" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/03/24/disable_nap/" data-id="cj2hd27by000b640vjpk9r2u0" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/objc/">objc</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/osx/">osx</a></li></ul>
@@ -227,9 +182,9 @@
 
 
   
-    <article id="post-fieldeditor" class="article article-type-post" itemscope itemprop="blogPost">
+    <article id="post-AXIsProcessTrustedWithOptions" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2016/03/24/fieldeditor/" class="article-date">
+    <a href="/2016/03/24/AXIsProcessTrustedWithOptions/" class="article-date">
   <time datetime="2016-03-24T02:54:00.000Z" itemprop="datePublished">2016-03-24</time>
 </a>
     
@@ -241,7 +196,7 @@
         
   
     <h1 itemprop="name">
-      <a class="article-title" href="/2016/03/24/fieldeditor/">fieldeditor</a>
+      <a class="article-title" href="/2016/03/24/AXIsProcessTrustedWithOptions/">AXIsProcessTrustedWithOptions</a>
     </h1>
   
 
@@ -249,15 +204,55 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>TextField 焦点从f0-&gt;f1 切换<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">FieldEditor1 resignFirstResponder</span><br><span class="line">FieldEditor1 resignFirstResponder</span><br><span class="line">TextField-f1 becomeFirstResponder</span><br><span class="line">TextField-f1 resignFirstResponder</span><br><span class="line">FieldEditor1 becomeFirstResponder</span><br></pre></td></tr></table></figure></p>
+        <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">NSDictionary</span> *options = @&#123;(<span class="keyword">id</span>)kAXTrustedCheckOptionPrompt: @YES&#125;;</span><br><span class="line"><span class="built_in">BOOL</span> accessibilityEnabled =</span><br><span class="line"> AXIsProcessTrustedWithOptions((<span class="built_in">CFDictionaryRef</span>)options);</span><br></pre></td></tr></table></figure>
+<figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> options:[<span class="type">NSString</span>:<span class="type">NSNumber</span>] = </span><br><span class="line">[<span class="type">String</span>(kAXTrustedCheckOptionPrompt.takeRetainedValue()) <span class="keyword">as</span> <span class="type">String</span>:<span class="literal">true</span>]</span><br><span class="line"><span class="keyword">let</span> accessibilityEnabled = <span class="type">AXIsProcessTrustedWithOptions</span>(options);</span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/24/fieldeditor/" data-id="civ9ja57y000e5m6u339dtz6m" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/03/24/AXIsProcessTrustedWithOptions/" data-id="cj2hd27bm0001640vmydc6u9m" class="article-share-link">Share</a>
       
       
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cocoa/">cocoa</a></li></ul>
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/osx/">osx</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-uitextfield" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2016/03/24/uitextfield/" class="article-date">
+  <time datetime="2016-03-24T02:54:00.000Z" itemprop="datePublished">2016-03-24</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2016/03/24/uitextfield/">ios UITextField</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <figure class="highlight objc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#import <span class="meta-string">"ViewController.h"</span></span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">@interface</span> <span class="title">ViewController</span> () &lt;<span class="title">UITextFieldDelegate</span>&gt;</span></span><br><span class="line"><span class="keyword">@property</span> (<span class="keyword">strong</span>) <span class="keyword">IBOutlet</span> <span class="built_in">UITextField</span> *f;</span><br><span class="line"><span class="keyword">@end</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">@implementation</span> <span class="title">ViewController</span></span></span><br><span class="line"></span><br><span class="line">-(<span class="keyword">void</span>)viewDidLoad&#123;</span><br><span class="line">    [<span class="keyword">super</span> viewDidLoad];</span><br><span class="line">    [<span class="keyword">self</span>.f addTarget:<span class="keyword">self</span></span><br><span class="line">               action:<span class="keyword">@selector</span>(valueChangeCallback:)</span><br><span class="line">     forControlEvents:<span class="built_in">UIControlEventEditingChanged</span>];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//文本变更后触发</span></span><br><span class="line">-(<span class="keyword">void</span>) valueChangeCallback:(<span class="built_in">UITextField</span> *) sender&#123;</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"f.text %@"</span>,sender.text);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">-(<span class="keyword">IBAction</span>) changeByCode:(<span class="keyword">id</span>)sender&#123;</span><br><span class="line">    <span class="keyword">self</span>.f.text = <span class="string">@"1234"</span>;</span><br><span class="line">    <span class="comment">//不会触发下面如何方法</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="meta">#pragma mark - delegate</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//清除按钮的回调</span></span><br><span class="line">-(<span class="built_in">BOOL</span>)textFieldShouldClear:(<span class="built_in">UITextField</span> *)textField&#123;</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"textFieldShouldClear"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">YES</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//Return 按键的回调  返回yes表示 开发人员自己来处理Return时间</span></span><br><span class="line"><span class="comment">//Return yes/no 跟关键键盘没有直接关系</span></span><br><span class="line">-(<span class="built_in">BOOL</span>)textFieldShouldReturn:(<span class="built_in">UITextField</span> *)textField&#123;</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"textFieldShouldReturn"</span>);</span><br><span class="line">    [textField resignFirstResponder];</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">NO</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">-(<span class="keyword">void</span>)textFieldDidBeginEditing:(<span class="built_in">UITextField</span> *)textField&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//停止编辑前调用 返回yes继续编辑 返回no取消"停止编辑"</span></span><br><span class="line">-(<span class="built_in">BOOL</span>)textFieldShouldEndEditing:(<span class="built_in">UITextField</span> *)textField&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">YES</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//停止编辑后调用</span></span><br><span class="line">-(<span class="keyword">void</span>)textFieldDidEndEditing:(<span class="built_in">UITextField</span> *)textField&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//ios 10的方法 替换上面这个方法</span></span><br><span class="line">-(<span class="keyword">void</span>)textFieldDidEndEditing:(<span class="built_in">UITextField</span> *)textField reason:(<span class="built_in">UITextFieldDidEndEditingReason</span>)reason&#123;</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"textFieldDidEndEditing:reason %zd"</span>,reason);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//文本变更之前的方法</span></span><br><span class="line"><span class="comment">//range是影响的文本范围</span></span><br><span class="line"><span class="comment">//replacementString是range范围文本的替换内容</span></span><br><span class="line">-(<span class="built_in">BOOL</span>)textField:(<span class="built_in">UITextField</span> *)textField shouldChangeCharactersInRange:(<span class="built_in">NSRange</span>)range replacementString:(<span class="built_in">NSString</span> *)string&#123;</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"-----------------"</span>);</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"current [%@]"</span>,textField.text);</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"range %zd, %zd"</span>,range.location, range.length);</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"replacementString [%@]"</span>,string);</span><br><span class="line">    <span class="built_in">NSLog</span>(<span class="string">@"-----------------"</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">YES</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta">#pragma mark end - </span></span><br><span class="line"><span class="keyword">@end</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2016/03/24/uitextfield/" data-id="cj2hd27dn0022640vsagk2hdj" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ios/">ios</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/objc/">objc</a></li></ul>
 
     </footer>
   </div>
@@ -293,7 +288,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/24/uitextfield_placeholder_color/" data-id="civ9ja5aa001t5m6u78s9sm2j" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/03/24/uitextfield_placeholder_color/" data-id="cj2hd27do0024640v8hmu59km" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/objc/">objc</a></li></ul>
@@ -332,7 +327,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/22/nsalert/" data-id="civ9ja58s000y5m6u1ruw2tuk" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/03/22/nsalert/" data-id="cj2hd27cn0010640vqrgvwx82" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cocoa/">cocoa</a></li></ul>
@@ -378,7 +373,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/22/ios_appdelegate_lifecycle/" data-id="civ9ja584000j5m6uwec4t530" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/03/22/ios_appdelegate_lifecycle/" data-id="cj2hd27c2000d640vm8ukteil" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ios/">ios</a></li></ul>
@@ -417,7 +412,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/22/image_data_from_nsdata/" data-id="civ9ja583000h5m6uscc0kygd" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/03/22/image_data_from_nsdata/" data-id="cj2hd27c8000l640v3zdhkvku" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/objc/">objc</a></li></ul>
@@ -458,7 +453,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/01/22/transparent_nsmenuitem/" data-id="civ9ja5a4001o5m6uefowsz2f" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/01/22/transparent_nsmenuitem/" data-id="cj2hd27dl0020640v38qvfybz" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/osx/">osx</a></li></ul>
@@ -530,11 +525,11 @@
           </li>
         
           <li>
-            <a href="/2016/05/09/swift_string_2_object/">swift 通过 string 创建 object</a>
+            <a href="/2016/05/09/nssound/">cocoa播放音频 系统声效</a>
           </li>
         
           <li>
-            <a href="/2016/05/09/textkit/">TextKit</a>
+            <a href="/2016/05/09/NSEventModifierFlags/">swift NSEventModifierFlags &#39;&amp;&#39; &#39;|&#39; 操作</a>
           </li>
         
       </ul>
@@ -549,7 +544,7 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2016 cosina1985<br>
+      &copy; 2017 cosina1985<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>

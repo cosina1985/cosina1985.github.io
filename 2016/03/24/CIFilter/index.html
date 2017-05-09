@@ -5,16 +5,16 @@
   
   <title>CIFilter | 跑位一脚</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="12345678910111213141516171819202122232425262728293031323334353637+(void) adjustImage:(UIImage *) image container:(UIImageView *) iv&amp;#123;    NSLog(@&quot;7&quot;);    CIImage *beginImage = [CIImage imageWithCGI">
+  <meta name="description" content="123456789101112131415161718192021222324252627282930313233343536+(void) adjustImage:(UIImage *) image container:(UIImageView *) iv&amp;#123;    CIImage *beginImage = [CIImage imageWithCGImage:image.CGImage">
 <meta property="og:type" content="article">
 <meta property="og:title" content="CIFilter">
 <meta property="og:url" content="http://yoursite.com/2016/03/24/CIFilter/index.html">
 <meta property="og:site_name" content="跑位一脚">
-<meta property="og:description" content="12345678910111213141516171819202122232425262728293031323334353637+(void) adjustImage:(UIImage *) image container:(UIImageView *) iv&amp;#123;    NSLog(@&quot;7&quot;);    CIImage *beginImage = [CIImage imageWithCGI">
-<meta property="og:updated_time" content="2016-05-09T06:06:04.000Z">
+<meta property="og:description" content="123456789101112131415161718192021222324252627282930313233343536+(void) adjustImage:(UIImage *) image container:(UIImageView *) iv&amp;#123;    CIImage *beginImage = [CIImage imageWithCGImage:image.CGImage">
+<meta property="og:updated_time" content="2017-05-09T09:34:29.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CIFilter">
-<meta name="twitter:description" content="12345678910111213141516171819202122232425262728293031323334353637+(void) adjustImage:(UIImage *) image container:(UIImageView *) iv&amp;#123;    NSLog(@&quot;7&quot;);    CIImage *beginImage = [CIImage imageWithCGI">
+<meta name="twitter:description" content="123456789101112131415161718192021222324252627282930313233343536+(void) adjustImage:(UIImage *) image container:(UIImageView *) iv&amp;#123;    CIImage *beginImage = [CIImage imageWithCGImage:image.CGImage">
   
     <link rel="alternate" href="/atom.xml" title="跑位一脚" type="application/atom+xml">
   
@@ -85,12 +85,12 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line">+(void) adjustImage:(<span class="type">UIImage</span> *) image container:(<span class="type">UIImageView</span> *) iv&#123;</span><br><span class="line">    <span class="type">NSLog</span>(@<span class="string">"7"</span>);</span><br><span class="line">    <span class="type">CIImage</span> *beginImage = [<span class="type">CIImage</span> imageWithCGImage:image.<span class="type">CGImage</span>];</span><br><span class="line">    <span class="type">CIFilter</span> * <span class="built_in">filter</span> = [<span class="type">CIFilter</span> filterWithName:@<span class="string">"CIColorControls"</span>];</span><br><span class="line">    [<span class="built_in">filter</span> setValue:beginImage forKey:kCIInputImageKey];</span><br><span class="line">    </span><br><span class="line">    <span class="type">NSUserDefaults</span> *ud = [<span class="type">NSUserDefaults</span> standardUserDefaults];</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//  亮度  10   -1---1</span></span><br><span class="line">    float lightPercent = [[ud objectForKey:@<span class="string">"Light"</span>] floatValue];</span><br><span class="line">    float lightValue =  -<span class="number">1</span> + <span class="number">2</span>*lightPercent;</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    <span class="comment">//  对比度 -11  0---4</span></span><br><span class="line">    float contrastPercent = [[ud objectForKey:@<span class="string">"Contrast"</span>] floatValue];</span><br><span class="line">    float contrastValue =  <span class="number">0</span> + <span class="number">4</span>*contrastPercent;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//  饱和度      0---2</span></span><br><span class="line">    float bhdPercent = [[ud objectForKey:@<span class="string">"Temp"</span>] floatValue];</span><br><span class="line">    float bhdValue =  <span class="number">0</span> + <span class="number">2</span>*bhdPercent;</span><br><span class="line">    </span><br><span class="line">    [<span class="built_in">filter</span> setValue:@(lightValue) forKey:@<span class="string">"inputBrightness"</span>];</span><br><span class="line">    [<span class="built_in">filter</span> setValue:@(contrastValue)forKey:@<span class="string">"inputContrast"</span>];</span><br><span class="line">    [<span class="built_in">filter</span> setValue:@(bhdValue) forKey:@<span class="string">"inputSaturation"</span>];</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 得到过滤后的图片</span></span><br><span class="line">    <span class="type">CIImage</span> *outputImage = [<span class="built_in">filter</span> outputImage];</span><br><span class="line"><span class="comment">//    // 转换图片, 创建基于GPU的CIContext对象</span></span><br><span class="line"><span class="comment">//    CIContext *context = [CIContext contextWithOptions: nil];</span></span><br><span class="line"><span class="comment">//    CGImageRef cgimg = [context createCGImage:outputImage fromRect:[outputImage extent]];</span></span><br><span class="line">    <span class="type">UIImage</span> *newImg = [<span class="type">UIImage</span> imageWithCIImage:outputImage];</span><br><span class="line"><span class="comment">//    // 显示图片</span></span><br><span class="line">    [iv setImage:newImg];</span><br><span class="line"><span class="comment">//    // 释放C对象</span></span><br><span class="line"><span class="comment">//    CGImageRelease(cgimg);</span></span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <figure class="highlight swift"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">+(void) adjustImage:(<span class="type">UIImage</span> *) image container:(<span class="type">UIImageView</span> *) iv&#123;</span><br><span class="line">    <span class="type">CIImage</span> *beginImage = [<span class="type">CIImage</span> imageWithCGImage:image.<span class="type">CGImage</span>];</span><br><span class="line">    <span class="type">CIFilter</span> * <span class="built_in">filter</span> = [<span class="type">CIFilter</span> filterWithName:@<span class="string">"CIColorControls"</span>];</span><br><span class="line">    [<span class="built_in">filter</span> setValue:beginImage forKey:kCIInputImageKey];</span><br><span class="line">    </span><br><span class="line">    <span class="type">NSUserDefaults</span> *ud = [<span class="type">NSUserDefaults</span> standardUserDefaults];</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//  亮度  10   -1---1</span></span><br><span class="line">    float lightPercent = [[ud objectForKey:@<span class="string">"Light"</span>] floatValue];</span><br><span class="line">    float lightValue =  -<span class="number">1</span> + <span class="number">2</span>*lightPercent;</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">    <span class="comment">//  对比度 -11  0---4</span></span><br><span class="line">    float contrastPercent = [[ud objectForKey:@<span class="string">"Contrast"</span>] floatValue];</span><br><span class="line">    float contrastValue =  <span class="number">0</span> + <span class="number">4</span>*contrastPercent;</span><br><span class="line">    </span><br><span class="line">    <span class="comment">//  饱和度      0---2</span></span><br><span class="line">    float bhdPercent = [[ud objectForKey:@<span class="string">"Temp"</span>] floatValue];</span><br><span class="line">    float bhdValue =  <span class="number">0</span> + <span class="number">2</span>*bhdPercent;</span><br><span class="line">    </span><br><span class="line">    [<span class="built_in">filter</span> setValue:@(lightValue) forKey:@<span class="string">"inputBrightness"</span>];</span><br><span class="line">    [<span class="built_in">filter</span> setValue:@(contrastValue)forKey:@<span class="string">"inputContrast"</span>];</span><br><span class="line">    [<span class="built_in">filter</span> setValue:@(bhdValue) forKey:@<span class="string">"inputSaturation"</span>];</span><br><span class="line">    </span><br><span class="line">    <span class="comment">// 得到过滤后的图片</span></span><br><span class="line">    <span class="type">CIImage</span> *outputImage = [<span class="built_in">filter</span> outputImage];</span><br><span class="line"><span class="comment">//    // 转换图片, 创建基于GPU的CIContext对象</span></span><br><span class="line"><span class="comment">//    CIContext *context = [CIContext contextWithOptions: nil];</span></span><br><span class="line"><span class="comment">//    CGImageRef cgimg = [context createCGImage:outputImage fromRect:[outputImage extent]];</span></span><br><span class="line">    <span class="type">UIImage</span> *newImg = [<span class="type">UIImage</span> imageWithCIImage:outputImage];</span><br><span class="line"><span class="comment">//    // 显示图片</span></span><br><span class="line">    [iv setImage:newImg];</span><br><span class="line"><span class="comment">//    // 释放C对象</span></span><br><span class="line"><span class="comment">//    CGImageRelease(cgimg);</span></span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2016/03/24/CIFilter/" data-id="civ9ja56x00035m6ugaqrqo7x" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2016/03/24/CIFilter/" data-id="cj2hd27bi0000640vy9km2y77" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ios/">ios</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/swift/">swift</a></li></ul>
@@ -101,19 +101,19 @@
     
 <nav id="article-nav">
   
-    <a href="/2016/03/24/uitextfield/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2016/03/25/ios_view_rotate/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Newer</strong>
       <div class="article-nav-title">
         
-          ios UITextField
+          UIView rotate Infinite
         
       </div>
     </a>
   
   
-    <a href="/2016/03/24/AXIsProcessTrustedWithOptions/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2016/03/24/fieldeditor/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">Older</strong>
-      <div class="article-nav-title">AXIsProcessTrustedWithOptions</div>
+      <div class="article-nav-title">fieldeditor</div>
     </a>
   
 </nav>
@@ -176,11 +176,11 @@
           </li>
         
           <li>
-            <a href="/2016/05/09/swift_string_2_object/">swift 通过 string 创建 object</a>
+            <a href="/2016/05/09/nssound/">cocoa播放音频 系统声效</a>
           </li>
         
           <li>
-            <a href="/2016/05/09/textkit/">TextKit</a>
+            <a href="/2016/05/09/NSEventModifierFlags/">swift NSEventModifierFlags &#39;&amp;&#39; &#39;|&#39; 操作</a>
           </li>
         
       </ul>
@@ -195,7 +195,7 @@
   
   <div class="outer">
     <div id="footer-info" class="inner">
-      &copy; 2016 cosina1985<br>
+      &copy; 2017 cosina1985<br>
       Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
